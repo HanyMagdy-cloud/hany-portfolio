@@ -1,0 +1,123 @@
+/* anchor offset for fixed navbar */
+#skills { scroll-margin-top: 130px; }
+
+/* Section wrapper */
+.skills-dark{
+  padding: 40px 0;
+}
+
+/* Big dark panel like screenshot */
+.skills-shell{
+  width: min(1200px, 94%);
+  margin: 40px auto;
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 20px;
+  padding: 70px 50px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+/* Header */
+.skills-head{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.skills-head h2{
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 12px 0;
+}
+
+.skills-subtitle{
+  font-size: 1.2rem;
+  color: #cbd5e0;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+.skills-note{
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Grid (2 columns, like screenshot) */
+.skills-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+/* Card */
+.skill-card{
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 26px 26px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.skill-card:hover{
+  transform: translateY(-3px);
+  background: #223047;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* Number badge */
+.skill-badge{
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #fff;
+
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 0 22px rgba(102,126,234,0.35);
+  flex-shrink: 0;
+}
+
+/* Content */
+.skill-body h3{
+  margin: 2px 0 8px 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.skill-body p{
+  margin: 0;
+  color: #cbd5e0;
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+  .skills-shell{
+    padding: 60px 35px;
+  }
+  .skills-head h2{
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px){
+  .skills-shell{
+    padding: 45px 25px;
+    margin: 20px auto;
+  }
+  .skills-grid{
+    grid-template-columns: 1fr; /* stack cards */
+  }
+  .skills-head h2{
+    font-size: 2rem;
+  }
+}

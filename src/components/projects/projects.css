@@ -1,0 +1,138 @@
+/* anchor offset for fixed navbar */
+#projects { scroll-margin-top: 130px; }
+
+.projects-dark{
+  padding: 40px 0;
+}
+
+/* big dark panel */
+.projects-shell{
+  width: min(1200px, 94%);
+  margin: 40px auto;
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 20px;
+  padding: 70px 50px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+/* header */
+.projects-head{
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.projects-head h2{
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 12px 0;
+}
+
+.projects-subtitle{
+  font-size: 1.2rem;
+  color: #cbd5e0;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+.projects-note{
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* list */
+.projects-list{
+  display: grid;
+  gap: 18px;
+}
+
+/* each item card */
+.project-item{
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 22px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.project-item:hover{
+  transform: translateY(-3px);
+  background: #223047;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.project-left{
+  min-width: 0;
+}
+
+.project-title{
+  margin: 0 0 6px 0;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.project-desc{
+  margin: 0;
+  color: #cbd5e0;
+  font-size: 0.95rem;
+}
+
+/* github button */
+.project-github{
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-size: 1.5rem;
+
+  box-shadow: 0 0 22px rgba(102,126,234,0.35);
+  transition: transform .2s ease, box-shadow .2s ease;
+  flex-shrink: 0;
+}
+
+.project-github:hover{
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 32px rgba(102,126,234,0.55);
+}
+
+/* responsive */
+@media (max-width: 1024px){
+  .projects-shell{
+    padding: 60px 35px;
+  }
+  .projects-head h2{
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px){
+  .projects-shell{
+    padding: 45px 25px;
+    margin: 20px auto;
+  }
+  .projects-head h2{
+    font-size: 2rem;
+  }
+
+  .project-item{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-github{
+    align-self: flex-end;
+  }
+}
