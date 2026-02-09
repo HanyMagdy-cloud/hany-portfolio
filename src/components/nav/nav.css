@@ -1,6 +1,8 @@
-/* ========== NAVBAR (Bootstrap) – Premium Gradient Floating ========== */
+/* =========================================================
+   PREMIUM FLOATING GRADIENT NAVBAR
+========================================================= */
 
-/* Space so page content doesn't hide under the fixed navbar */
+/* Prevent content from hiding under fixed navbar */
 body {
   padding-top: 130px;
 }
@@ -8,22 +10,31 @@ body {
 /* Floating gradient navbar */
 .navbar.custom-nav {
   position: fixed;
-  top: 20px !important;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 
-  left: 50% !important;
-  right: auto !important;
-  transform: translateX(-50%) !important;
-
-  width: min(1200px, 94%) !important;
-  border-radius: 16px;
+  width: min(1200px, 94%);
   padding: 14px 18px;
+  border-radius: 16px;
 
   background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.30);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+
   z-index: 1000;
+  transition: all 0.3s ease;
 }
 
-/* Brand (logo + badge + name) */
+/* =======================
+   BRAND SECTION
+======================= */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .brand-wrap {
   display: flex;
   align-items: center;
@@ -31,7 +42,7 @@ body {
 }
 
 .brand-badge {
-  background: #fff;
+  background: #ffffff;
   color: #667eea;
   padding: 8px 15px;
   border-radius: 20px;
@@ -45,15 +56,18 @@ body {
 }
 
 .brand-text {
-  color: #fff;
+  color: #ffffff;
   font-size: 1.5rem;
   font-weight: 800;
   line-height: 1;
 }
 
-/* Navbar links */
+/* =======================
+   NAV LINKS
+======================= */
+
 .custom-link {
-  color: #fff !important;
+  color: #ffffff !important;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -62,7 +76,7 @@ body {
   border-radius: 12px;
 
   position: relative;
-  transition: background 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 /* Underline animation */
@@ -74,9 +88,9 @@ body {
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background: #fff;
-  transition: width 0.25s ease;
+  background: #ffffff;
   border-radius: 999px;
+  transition: width 0.25s ease;
 }
 
 .custom-link:hover {
@@ -87,42 +101,50 @@ body {
   width: 70%;
 }
 
-/* Active link style */
+/* Active link */
 .custom-link.active {
   background: rgba(255, 255, 255, 0.25);
 }
+
 .custom-link.active::after {
   width: 70%;
 }
 
-/* Hamburger button */
+/* =======================
+   HAMBURGER BUTTON
+======================= */
+
 .custom-toggler {
-  border: 0;
+  border: none;
   box-shadow: none !important;
 }
 
-/* Make bootstrap hamburger icon white */
+/* Make hamburger white */
 .custom-toggler .navbar-toggler-icon {
   filter: invert(1);
 }
 
-/* ===== Mobile dropdown ===== */
+/* =======================
+   MOBILE STYLING
+======================= */
+
 @media (max-width: 991px) {
 
   body {
-    padding-top: 150px; /* slightly more space on mobile */
+    padding-top: 150px;
   }
 
   .navbar.custom-nav {
     padding: 12px 14px;
   }
 
-  /* dropdown area background */
+  /* Dropdown container */
   .navbar.custom-nav .navbar-collapse {
-    margin-top: 12px;
+    margin-top: 14px;
     background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(12px);
     border-radius: 14px;
-    padding: 10px;
+    padding: 14px;
   }
 
   .brand-text {
@@ -130,15 +152,30 @@ body {
   }
 
   .custom-link {
-    padding: 10px 12px !important;
+    padding: 12px !important;
+  }
+
+  /* ==================================================
+     HIDE LOGO WHEN MOBILE MENU IS OPEN (CSS ONLY)
+     Uses :has() — works in modern browsers
+  ================================================== */
+
+  .navbar.custom-nav:has(.navbar-collapse.show) .navbar-brand {
+    display: none !important;
   }
 }
 
-/* Very small screens */
+/* =======================
+   VERY SMALL SCREENS
+======================= */
+
 @media (max-width: 480px) {
 
   .brand-wrap {
     gap: 10px;
+  }
+  .rounded-circle.shadow-sm{
+    display: none;
   }
 
   .brand-badge {

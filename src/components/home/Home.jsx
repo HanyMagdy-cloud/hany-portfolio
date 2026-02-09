@@ -14,9 +14,9 @@ export default function Home() {
           <p className="subtitle">Cloud Developer with .NET & Azure</p>
 
           <p className="description">
-            I build scalable APIs and cloud solutions using C#, ASP.NET Core, SQL
-            Server, and Azure services. I enjoy solving real-world problems and
-            delivering clean, maintainable code.
+            I build scalable APIs and cloud solutions using C#, ASP.NET Core,
+            SQL Server, and Azure services. I enjoy solving real-world problems
+            and delivering clean, maintainable code.
           </p>
 
           <div className="buttons">

@@ -44,7 +44,7 @@ export default function Nav() {
           href="#home"
           onClick={goTo("#home")}
         >
-          <img
+          <img 
             src={Logo}
             alt="Logo"
             width="44"
