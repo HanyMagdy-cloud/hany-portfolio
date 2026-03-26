@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./footer.css";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 export default function Footer() {
+  const form = useRef();
+  const [fromName, setFromName] = useState("");
   const [fromEmail, setFromEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isSending, setIsSending] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (!fromName.trim()) {
+      alert("Please enter your name.");
+      return;
+    }
     if (!fromEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fromEmail)) {
       alert("Please enter a valid email.");
       return;
@@ -18,15 +26,31 @@ export default function Footer() {
       return;
     }
 
-    const subject = `Portfolio contact from ${fromEmail}`;
-    const body = `${message}\n\nFrom: ${fromEmail}`;
+    setIsSending(true);
 
-    window.location.href =
-      `mailto:honamagdy2@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    // optional: clear fields after opening mail app
-    setFromEmail("");
-    setMessage("");
+    emailjs
+      .sendForm(
+        "service_nlemyzd",
+        "template_bxdux09",
+        form.current,
+        "QEgRmqrcKj5ckBl-2",
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          alert("Message sent successfully!");
+          setFromName("");
+          setFromEmail("");
+          setMessage("");
+          setIsSending(false);
+          form.current.reset();
+        },
+        (err) => {
+          console.log("FAILED...", err);
+          alert(`Failed to send message: ${err.text || "Unknown error"}`);
+          setIsSending(false);
+        },
+      );
   };
 
   return (
@@ -34,7 +58,9 @@ export default function Footer() {
       <div className="footer-shell">
         <header className="footer-head">
           <h2>Contact Me</h2>
-          <p className="footer-subtitle">Let’s build something great together</p>
+          <p className="footer-subtitle">
+            Let’s build something great together
+          </p>
         </header>
 
         {/* Social icons */}
@@ -74,11 +100,24 @@ export default function Footer() {
         </nav>
 
         {/* Contact form */}
-        <form className="footer-form" onSubmit={handleSubmit}>
+        <form className="footer-form" onSubmit={handleSubmit} ref={form}>
+          <label className="field">
+            <span>Your Name</span>
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={fromName}
+              onChange={(e) => setFromName(e.target.value)}
+              required
+            />
+          </label>
+
           <label className="field">
             <span>Your Email</span>
             <input
               type="email"
+              name="email"
               placeholder="you@example.com"
               value={fromEmail}
               onChange={(e) => setFromEmail(e.target.value)}
@@ -90,6 +129,7 @@ export default function Footer() {
             <span>Your Message</span>
             <textarea
               rows={5}
+              name="message"
               placeholder="Write your message here..."
               value={message}
               onChange={(e) => setMessage(e.target.value)}
@@ -97,8 +137,8 @@ export default function Footer() {
             />
           </label>
 
-          <button className="send-btn" type="submit">
-            Send Message
+          <button className="send-btn" type="submit" disabled={isSending}>
+            {isSending ? "Sending..." : "Send Message"}
           </button>
         </form>
 
