@@ -9,20 +9,23 @@ export default function Footer() {
   const [fromEmail, setFromEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
+  const [status, setStatus] = useState(null); // 'success' | 'error' | null
+  const [validationError, setValidationError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setValidationError("");
 
     if (!fromName.trim()) {
-      alert("Please enter your name.");
+      setValidationError("Please enter your name.");
       return;
     }
     if (!fromEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fromEmail)) {
-      alert("Please enter a valid email.");
+      setValidationError("Please enter a valid email address.");
       return;
     }
     if (!message.trim()) {
-      alert("Please write a message.");
+      setValidationError("Please write a message.");
       return;
     }
 
@@ -30,7 +33,7 @@ export default function Footer() {
 
     emailjs
       .sendForm(
-        "service_nlemyzd",
+        "service_dheff74",
         "template_bxdux09",
         form.current,
         "QEgRmqrcKj5ckBl-2",
@@ -38,16 +41,19 @@ export default function Footer() {
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
-          alert("Message sent successfully!");
+          setStatus("success");
           setFromName("");
           setFromEmail("");
           setMessage("");
           setIsSending(false);
           form.current.reset();
+          
+          // Clear status after 5 seconds
+          setTimeout(() => setStatus(null), 5000);
         },
         (err) => {
-          console.log("FAILED...", err);
-          alert(`Failed to send message: ${err.text || "Unknown error"}`);
+          console.error("FAILED...", err);
+          setStatus("error");
           setIsSending(false);
         },
       );
@@ -62,7 +68,6 @@ export default function Footer() {
             Let’s build something great together
           </p>
         </header>
-
         {/* Social icons */}
         <nav className="footer-socials" aria-label="Social links">
           <a
@@ -141,6 +146,28 @@ export default function Footer() {
             {isSending ? "Sending..." : "Send Message"}
           </button>
         </form>
+
+        {/* Status Messages */}
+        <div className="footer-status-container">
+          {status === "success" && (
+            <div className="status-message success">
+              <i className="bi bi-check-circle-fill"></i>
+              Thank you! Your message has been sent.
+            </div>
+          )}
+          {status === "error" && (
+            <div className="status-message error">
+              <i className="bi bi-exclamation-triangle-fill"></i>
+              Oops! Something went wrong. Please try again.
+            </div>
+          )}
+          {validationError && (
+            <div className="status-message error">
+              <i className="bi bi-exclamation-triangle-fill"></i>
+              {validationError}
+            </div>
+          )}
+        </div>
 
         {/* Contact info */}
         <div className="footer-meta">
