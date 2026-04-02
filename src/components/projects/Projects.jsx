@@ -4,6 +4,11 @@ import { FaGithub } from "react-icons/fa";
 
 const PROJECTS = [
   { name: "Bank Web API", repo: "https://github.com/HanyMagdy-cloud/Bank" },
+
+  {
+    name: "Car wash booking system",
+    repo: "https://github.com/HanyMagdy-cloud/CarWashStation.git",
+  },
   {
     name: "Community Web API",
     repo: "https://github.com/HanyMagdy-cloud/community",
