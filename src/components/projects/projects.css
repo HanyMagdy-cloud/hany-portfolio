@@ -50,6 +50,8 @@
 
 /* each item card */
 .project-item{
+  position: relative;
+  overflow: hidden;
   background: #1e293b;
   border: 1px solid #334155;
   border-radius: 14px;
@@ -60,17 +62,26 @@
   justify-content: space-between;
   gap: 18px;
 
-  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+  transition: 
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+    box-shadow 0.3s ease, 
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .project-item:hover{
-  transform: translateY(-3px);
-  background: #223047;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  transform: translateY(-6px) scale(1.008) rotate(0.4deg);
+  background: #202b42;
+  border-color: rgba(102, 126, 234, 0.35);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.35),
+    0 0 22px rgba(102, 126, 234, 0.18);
 }
 
 .project-left{
   min-width: 0;
+  position: relative;
+  z-index: 2; /* keep above the background glow blob */
 }
 
 .project-title{
@@ -86,6 +97,24 @@
   font-size: 0.95rem;
 }
 
+/* Background animated glow shape that zooms on hover */
+.project-backdrop-glow {
+  position: absolute;
+  top: -40%;
+  left: -20%;
+  width: 70%;
+  height: 180%;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(1);
+}
+
+.project-item:hover .project-backdrop-glow {
+  transform: scale(1.4) translate(10%, -5%);
+}
+
 /* github button */
 .project-github{
   width: 52px;
@@ -99,13 +128,17 @@
   font-size: 1.5rem;
 
   box-shadow: 0 0 22px rgba(102,126,234,0.35);
-  transition: transform .2s ease, box-shadow .2s ease;
+  transition: 
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+    box-shadow 0.4s ease;
   flex-shrink: 0;
+  position: relative;
+  z-index: 2; /* keep above the background glow blob */
 }
 
 .project-github:hover{
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 0 32px rgba(102,126,234,0.55);
+  transform: translateY(-3px) scale(1.12) rotate(8deg);
+  box-shadow: 0 0 32px rgba(102,126,234,0.65);
 }
 
 /* responsive */

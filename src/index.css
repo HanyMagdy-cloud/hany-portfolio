@@ -8,13 +8,13 @@
 }
 
 :root {
-  --primary-color: #0a192f;
-  --secondary-color: #112240;
-  --text-color: #010512;
+  --primary-color: #030712;
+  --secondary-color: #0f172a;
+  --text-color: #f3f4f6;
   --highlight-color: #12b7ea;
-  --light-color: #ccd6f6;
+  --light-color: #94a3b8;
   --white-color: #ffffff;
-  --transition: all 0.4s ease-in-out;
+  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Global body look */
@@ -23,8 +23,40 @@ body {
   color: var(--text-color);
   line-height: 1.7;
   min-height: 100dvh;
-  background-image: url(assets/background.jpg);
-  background-size: cover;
+  background-color: #030712;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.07) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 55%;
+  right: 5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .container {
@@ -99,4 +131,15 @@ img {
   section {
     padding-top: 5rem;
   }
+}
+
+/* Stack content sections above global fixed background layer */
+.hero,
+.about,
+.skills-shell,
+.projects-shell,
+.documents-shell,
+.footer-shell {
+  position: relative;
+  z-index: 2;
 }

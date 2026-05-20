@@ -94,7 +94,7 @@
   color: #fff;
 
   outline: none;
-  transition: border-color .2s ease, box-shadow .2s ease;
+  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
 }
 
 .field input::placeholder,
@@ -105,7 +105,8 @@
 .field input:focus,
 .field textarea:focus{
   border-color: #667eea;
-  box-shadow: 0 0 0 4px rgba(102,126,234,0.18);
+  background-color: #1a2333;
+  box-shadow: 0 0 0 1px #667eea, 0 0 18px rgba(102, 126, 234, 0.45);
 }
 
 /* send button */
@@ -119,22 +120,22 @@
   font-weight: 800;
   font-size: 1.05rem;
   color: #fff;
-  background: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+  background-size: 200% auto;
 
-  box-shadow: 0 0 30px rgba(102,126,234,0.45);
-  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+  box-shadow: 0 0 25px rgba(102, 126, 234, 0.35);
+  transition: background-position 0.4s ease, box-shadow 0.3s ease;
 }
 
 .send-btn:hover{
-  background: #764ba2;
-  transform: translateY(-3px);
-  box-shadow: 0 0 40px rgba(102,126,234,0.65);
+  background-position: right center;
+  box-shadow: 0 0 35px rgba(102, 126, 234, 0.65);
 }
 
 .send-btn:disabled {
   background: #475569;
   cursor: not-allowed;
-  transform: none;
+  transform: none !important;
   box-shadow: none;
   opacity: 0.7;
 }

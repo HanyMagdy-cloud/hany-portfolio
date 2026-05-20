@@ -4,20 +4,29 @@
 /* optional wrapper */
 .home-dark{
   padding: 40px 0;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Hero Section - Dark Minimalist */
+/* Hero Section - Premium Glassmorphism */
 .hero {
   display: flex;
   align-items: center;
   gap: 80px;
   padding: 100px 80px;
-  background: #0f172a;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 20px;
   margin: 40px auto;
   min-height: calc(100vh - 80px);
   width: min(1200px, 94%);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  position: relative;
+  z-index: 3;
 }
 
 /* Profile Image */

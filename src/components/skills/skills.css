@@ -1,163 +1,982 @@
+/* ==========================================================================
+   Premium Dark-Themed "Skills" Futuristic CSS Styling
+   ========================================================================== */
+
 #skills {
   scroll-margin-top: 130px;
 }
 
+/* Base Section Gradient Backdrop */
 .skills-dark {
-  padding: 40px 0;
+  padding: 80px 0;
+  background: radial-gradient(circle at 50% 30%, #0b1329 0%, #030712 100%);
+  position: relative;
+  overflow: hidden;
 }
 
+/* Symmetrical Core Content Shell */
 .skills-shell {
   width: min(1200px, 94%);
-  margin: 40px auto;
-  background: #0f172a;
-  border: 1px solid #1e293b;
-  border-radius: 20px;
-  padding: 70px 50px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  margin: 0 auto;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 28px;
+  padding: 80px 60px;
+  box-shadow: 
+    0 30px 70px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  position: relative;
+  z-index: 2;
 }
 
-/* Header */
+/* Subtle Animated Grid Layer in shell */
+.skills-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.005) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center;
+  pointer-events: none;
+  opacity: 0.8;
+  z-index: -1;
+  border-radius: 28px;
+}
+
+/* --- Header Section --- */
 .skills-head {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .skills-head h2 {
-  font-size: 3rem;
+  font-size: 3.4rem;
   font-weight: 800;
-  color: #fff;
-  margin: 0 0 12px 0;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+/* Bold Typography & Indigo/Purple Gradient Accent */
+.skills-gradient {
+  background: linear-gradient(135deg, #c084fc 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+}
+
+/* Pulsing Glowing Underline */
+.skills-underline {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #c084fc 0%, #6366f1 100%);
+  margin: 20px auto 25px;
+  border-radius: 99px;
+  box-shadow: 
+    0 0 15px rgba(192, 132, 252, 0.7),
+    0 0 30px rgba(99, 102, 241, 0.4);
+  animation: glowPulse 3s infinite ease-in-out;
 }
 
 .skills-subtitle {
-  font-size: 1.2rem;
-  color: #cbd5e0;
+  font-size: 1.35rem;
+  color: #e2e8f0;
   margin: 0 0 10px 0;
   font-weight: 600;
+  letter-spacing: -0.2px;
 }
 
 .skills-note {
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   color: #94a3b8;
   margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
-/* Grid */
+/* --- Responsive 3x2 Grid --- */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
-/* Animation keyframes */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Card */
-.skill-card {
-  background: #1e293b;
-  border: 1px solid #334155;
-  border-radius: 14px;
-  padding: 22px 22px;
-
+/* --- Premium Glassmorphism Card V2 --- */
+.skill-card-v2 {
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  overflow: hidden;
   display: flex;
-  gap: 18px;
-  align-items: flex-start;
+  flex-direction: column;
+  min-height: 460px;
+  box-shadow: 
+    0 20px 45px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.03);
+  transition: 
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    background-color 0.4s ease;
+  position: relative;
+}
 
-  /* animation */
+/* Set Tech glows locally */
+.skill-card-v2:nth-child(1) { --glow-color: rgba(139, 92, 246, 0.3); --tech-color: rgba(168, 85, 247, 0.45); }
+.skill-card-v2:nth-child(2) { --glow-color: rgba(59, 130, 246, 0.3); --tech-color: rgba(96, 165, 250, 0.45); }
+.skill-card-v2:nth-child(3) { --glow-color: rgba(16, 185, 129, 0.28); --tech-color: rgba(52, 211, 153, 0.45); }
+.skill-card-v2:nth-child(4) { --glow-color: rgba(6, 182, 212, 0.3); --tech-color: rgba(34, 211, 238, 0.45); }
+.skill-card-v2:nth-child(5) { --glow-color: rgba(56, 189, 248, 0.3); --tech-color: rgba(56, 189, 248, 0.45); }
+.skill-card-v2:nth-child(6) { --glow-color: rgba(249, 115, 22, 0.28); --tech-color: rgba(249, 115, 22, 0.45); }
+
+/* Premium Soft glowing borders by default */
+.skill-card-v2::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+/* Premium Hover Action */
+.skill-card-v2:hover {
+  transform: translateY(-10px) scale(1.01);
+  background: rgba(45, 58, 86, 0.55);
+  border-color: var(--tech-color);
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.55),
+    0 0 35px var(--glow-color);
+}
+
+.skill-card-v2:hover::after {
   opacity: 0;
-  animation: fadeUp 0.6s ease forwards;
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
 }
 
-.skill-card:hover {
-  transform: translateY(-4px);
-  background: #223047;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-}
-
-/* Left column (icon + number) */
-.skill-left {
+/* --- Top Half - High-Fidelity Cyber Artworks --- */
+.card-top-half {
+  position: relative;
+  height: 230px;
+  width: 100%;
+  background: rgba(10, 15, 30, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+/* Tech-focused Cyber Grid patterns */
+.artwork-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.007) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: center;
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+/* Bright Neon Glow Radial */
+.glow-radial {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  filter: blur(45px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.65;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.skill-card-v2:hover .glow-radial {
+  transform: scale(1.2);
+  opacity: 0.95;
+}
+
+.purple-glow { background: radial-gradient(circle, rgba(168, 85, 247, 0.4) 0%, transparent 70%); }
+.blue-glow { background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, transparent 70%); }
+.green-glow { background: radial-gradient(circle, rgba(16, 185, 129, 0.35) 0%, transparent 70%); }
+.cyan-glow { background: radial-gradient(circle, rgba(6, 182, 212, 0.4) 0%, transparent 70%); }
+.orange-glow { background: radial-gradient(circle, rgba(249, 115, 22, 0.35) 0%, transparent 70%); }
+
+/* --- 1. C# Development Artwork --- */
+.csharp-art {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.artwork-bg-code {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-family: "Consolas", "Monaco", monospace;
+  font-size: 0.68rem;
+  color: rgba(168, 85, 247, 0.22);
+  line-height: 1.4;
+  pointer-events: none;
+  user-select: none;
+  text-align: left;
+  transition: transform 0.5s ease;
+}
+
+.skill-card-v2:hover .artwork-bg-code {
+  transform: translateY(-3px) scale(0.98);
+}
+
+.logo-box {
+  z-index: 2;
+  width: 85px;
+  height: 85px;
+  filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.55));
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-card-v2:hover .logo-box {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Pulsing Scanner Line */
+.scanner-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  z-index: 3;
+  opacity: 0.6;
+  pointer-events: none;
+  animation: scanMove 4s infinite linear;
+}
+
+.purple-scanner {
+  background: linear-gradient(90deg, transparent, #c084fc, transparent);
+  box-shadow: 0 0 10px #c084fc;
+}
+
+/* Floating Badges inside Card Art */
+.artwork-floating-tag {
+  position: absolute;
+  bottom: 12px;
+  right: 15px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 50px;
+  z-index: 4;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.purple-tag { background: rgba(168, 85, 247, 0.2); color: #e9d5ff; border-color: rgba(168, 85, 247, 0.4); }
+.green-tag { background: rgba(16, 185, 129, 0.2); color: #d1fae5; border-color: rgba(16, 185, 129, 0.4); }
+
+/* --- 2. ASP.NET Core Web API Artwork --- */
+.dotnet-art {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.api-dashboard {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.7;
+  transition: transform 0.5s ease;
+}
+
+.skill-card-v2:hover .api-dashboard {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
+
+.api-panel {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 8px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
   gap: 10px;
-  align-content: start;
+  font-family: "Consolas", monospace;
+  font-size: 0.65rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Icon box */
-.skill-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  display: grid;
-  place-items: center;
-
-  color: #fff;
-  font-size: 1.55rem;
-
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  box-shadow: 0 0 22px rgba(102, 126, 234, 0.35);
+.api-verb {
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 
-/* Number badge (small) */
-.skill-badge {
-  width: 56px;
-  height: 44px;
-  border-radius: 14px;
+.api-verb.get { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+.api-verb.post { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+
+.api-path {
+  color: #e2e8f0;
+  flex-grow: 1;
+}
+
+.api-status {
+  font-weight: 700;
+}
+
+.api-status.s200 { color: #34d399; }
+.api-status.s201 { color: #60a5fa; }
+
+.network-web {
+  position: absolute;
+  bottom: -15px;
+  width: 240px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.net-core-pill {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  padding: 8px 24px;
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+  color: #ffffff;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.net-pill-text {
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.net-pill-sub {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0.85;
+}
+
+.skill-card-v2:hover .net-core-pill {
+  transform: scale(1.08);
+  box-shadow: 0 0 35px rgba(59, 130, 246, 0.85);
+}
+
+.node {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #0f172a;
+  border: 1px solid rgba(96, 165, 250, 0.4);
   display: grid;
   place-items: center;
+  color: #60a5fa;
+  font-size: 0.95rem;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.25);
+  transition: all 0.4s ease;
+  z-index: 6;
+}
 
-  background: rgba(255, 255, 255, 0.06);
+.skill-card-v2:hover .node {
+  border-color: #60a5fa;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.globe-node { top: 5px; left: 15px; }
+.lock-node { top: 5px; right: 15px; }
+.code-node { bottom: 25px; left: 50%; transform: translateX(-50%); font-weight: 800; font-family: monospace; }
+
+.connector-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --- 3. Database Cylinders Artwork --- */
+.database-art {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.db-layout {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  z-index: 2;
+  margin-top: 10px;
+}
+
+.db-cylinder-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 65px;
+  perspective: 400px;
+}
+
+.db-cylinder {
+  position: relative;
+  height: 22px;
+  background: linear-gradient(90deg, #047857 0%, #10b981 50%, #047857 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50px / 7px;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+/* Glowing cylinder connection light stripes */
+.db-light {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  top: 50%;
+  height: 2px;
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+  transform: translateY(-50%);
+  opacity: 0.7;
+}
+
+.skill-card-v2:hover .db-cylinder {
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.8);
+}
+
+.skill-card-v2:hover .db-cylinder:nth-child(1) { transform: translateY(-4px); }
+.skill-card-v2:hover .db-cylinder:nth-child(2) { transform: translateY(-2px); }
+.skill-card-v2:hover .db-cylinder:nth-child(3) { transform: translateY(0); }
+
+.db-relation-visual {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.db-relation-box {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 8px;
+  padding: 6px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.4s ease;
+}
+
+.db-relation-box.box-users {
+  transform: rotate(-3deg);
+}
+
+.db-relation-box.box-orders {
+  transform: rotate(3deg);
+}
+
+.skill-card-v2:hover .db-relation-box {
+  border-color: #10b981;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.35);
+  transform: scale(1.05) rotate(0deg);
+}
+
+.box-title {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 2px;
+}
+
+.box-field {
+  font-size: 0.55rem;
+  font-family: monospace;
+  color: #a7f3d0;
+}
+
+.relation-line-svg {
+  width: 50px;
+  height: 30px;
+  pointer-events: none;
+}
+
+/* --- 4. Azure Cloud Illustration --- */
+.azure-art {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.artwork-bg-grid-azure {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+  background-size: 15px 15px;
+  opacity: 0.8;
+}
+
+.azure-illustration {
+  position: relative;
+  width: 180px;
+  height: 140px;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  margin-top: 10px;
+}
+
+.azure-badge-container {
+  filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.6));
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-card-v2:hover .azure-badge-container {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.azure-svg {
+  transition: filter 0.4s ease;
+}
+
+.skill-card-v2:hover .azure-svg {
+  filter: drop-shadow(0 0 30px rgba(6, 182, 212, 0.95));
+}
+
+.cloud {
+  position: absolute;
+  background: #0f172a;
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #22d3ee;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+}
+
+.skill-card-v2:hover .cloud {
+  border-color: #22d3ee;
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.5);
+}
+
+.cloud-left {
+  top: 15px;
+  left: 5px;
+  animation: floatUpDown 4s infinite ease-in-out;
+}
+
+.cloud-right {
+  bottom: 15px;
+  right: 5px;
+  animation: floatUpDown 4s infinite ease-in-out 2s;
+}
+
+.azure-status-panel {
+  position: absolute;
+  bottom: 12px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-family: monospace;
+  font-size: 0.6rem;
+  color: #e2e8f0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.status-dot-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22d3ee;
+  box-shadow: 0 0 8px #22d3ee;
+  animation: dotPulse 1.5s infinite alternate;
+}
+
+/* --- 5. Docker DevOps Pipeline Artwork --- */
+.docker-art {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.docker-ship {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  width: 90%;
+  margin-top: 15px;
+}
+
+.docker-whale-container {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.docker-whale-icon {
+  font-size: 3.4rem;
+  color: #38bdf8;
+  filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.55));
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-card-v2:hover .docker-whale-icon {
+  transform: scale(1.1) translateY(-3px);
+  filter: drop-shadow(0 0 25px rgba(56, 189, 248, 0.8));
+}
+
+.docker-cargo {
+  display: flex;
+  gap: 3px;
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cargo-box {
+  width: 10px;
+  height: 10px;
+  background: #0284c7;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(56, 189, 248, 0.4);
+}
+
+.cargo-box:nth-child(2) { background: #38bdf8; }
+.cargo-box:nth-child(3) { background: #0369a1; }
+
+.docker-timeline {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+
+.docker-timeline::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 6%;
+  right: 6%;
+  height: 2px;
+  background: rgba(56, 189, 248, 0.15);
+  z-index: 1;
+}
+
+.skill-card-v2:hover .docker-timeline::before {
+  background: rgba(56, 189, 248, 0.4);
+}
+
+.time-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  z-index: 2;
+}
+
+.time-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #0f172a;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  display: grid;
+  place-items: center;
+  color: #38bdf8;
+  font-size: 0.65rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.skill-card-v2:hover .time-icon {
+  border-color: #38bdf8;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.65);
+}
+
+.time-label {
+  font-size: 0.58rem;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+}
+
+.skill-card-v2:hover .time-label {
+  color: #ffffff;
+}
+
+/* --- 6. Git Branch Fork Artwork --- */
+.git-art {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.git-layout {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  z-index: 2;
+  width: 90%;
+  margin-top: 15px;
+}
+
+.git-visual-tree {
+  flex-grow: 1;
+  position: relative;
+}
+
+.git-branch-svg {
+  filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.3));
+}
+
+.git-node {
+  transition: r 0.3s ease;
+}
+
+.pulse-node {
+  animation: dotPulse 1s infinite alternate;
+}
+
+.git-brand-overlay {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  padding: 4px 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.git-branch-icon {
+  font-size: 1.3rem;
+  color: #f97316;
+}
+
+.github-cat-icon {
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+.brand-divider {
+  color: #475569;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.solid-layers {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 85px;
+}
+
+.solid-layer {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: #cbd5e0;
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 3px 6px;
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.4s ease;
+  white-space: nowrap;
+}
+
+.solid-layer.ring-4 { border-color: rgba(167, 139, 250, 0.3); color: #c084fc; }
+.solid-layer.ring-3 { border-color: rgba(96, 165, 250, 0.3); color: #60a5fa; }
+.solid-layer.ring-2 { border-color: rgba(52, 211, 153, 0.3); color: #34d399; }
+.solid-layer.ring-1 { border-color: rgba(249, 115, 22, 0.3); color: #f97316; }
+
+.skill-card-v2:hover .solid-layer {
+  transform: translateX(-4px);
+}
+
+.skill-card-v2:hover .solid-layer.ring-4 { border-color: rgba(167, 139, 250, 0.8); box-shadow: 0 0 10px rgba(167, 139, 250, 0.3); }
+.skill-card-v2:hover .solid-layer.ring-3 { border-color: rgba(96, 165, 250, 0.8); box-shadow: 0 0 10px rgba(96, 165, 250, 0.3); }
+.skill-card-v2:hover .solid-layer.ring-2 { border-color: rgba(52, 211, 153, 0.8); box-shadow: 0 0 10px rgba(52, 211, 153, 0.3); }
+.skill-card-v2:hover .solid-layer.ring-1 { border-color: rgba(249, 115, 22, 0.8); box-shadow: 0 0 10px rgba(249, 115, 22, 0.3); }
+
+
+/* --- Bottom Half - Symmetrical Content Block --- */
+.card-bottom-half {
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: left;
+}
+
+.card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.card-badge-num {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #cbd5e0;
-  font-weight: 800;
 }
 
-/* Content */
-.skill-body h3 {
-  margin: 2px 0 8px 0;
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: #fff;
+.skill-card-v2:hover .card-badge-num {
+  transform: scale(1.08) rotate(360deg);
+  box-shadow: 0 0 15px var(--glow-color);
 }
 
-.skill-body p {
+.card-badge-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
   margin: 0;
-  color: #cbd5e0;
-  line-height: 1.7;
-  font-size: 0.98rem;
+  letter-spacing: -0.3px;
 }
 
-/* Responsive */
+.card-badge-desc {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Animations & Transitions Telemetry
+   ========================================================================== */
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.95;
+    box-shadow: 
+      0 0 15px rgba(192, 132, 252, 0.7),
+      0 0 30px rgba(99, 102, 241, 0.4);
+  }
+  50% {
+    opacity: 0.75;
+    box-shadow: 
+      0 0 25px rgba(192, 132, 252, 0.95),
+      0 0 50px rgba(99, 102, 241, 0.6);
+  }
+}
+
+@keyframes scanMove {
+  0% { top: -10%; }
+  50% { top: 110%; }
+  100% { top: -10%; }
+}
+
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes dotPulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(1.2); opacity: 1; }
+}
+
+
+/* ==========================================================================
+   Responsive Adaptive Layout Rules
+   ========================================================================== */
 @media (max-width: 1024px) {
   .skills-shell {
-    padding: 60px 35px;
+    padding: 60px 40px;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
   .skills-head h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+  }
+  .skills-subtitle {
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 768px) {
   .skills-shell {
-    padding: 45px 25px;
+    padding: 40px 20px;
     margin: 20px auto;
+    border-radius: 20px;
+  }
+  .skills-shell::before {
+    border-radius: 20px;
   }
   .skills-grid {
     grid-template-columns: 1fr;
+    gap: 25px;
   }
   .skills-head h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+  .skills-subtitle {
+    font-size: 1.1rem;
+  }
+  .card-top-half {
+    height: 210px;
+  }
+  .skill-card-v2 {
+    min-height: auto;
   }
 }

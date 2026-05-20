@@ -105,6 +105,15 @@ export default function Nav() {
             <li className="nav-item">
               <a
                 className="nav-link custom-link"
+                href="#documents"
+                onClick={goTo("#documents")}
+              >
+                DOCUMENTS
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                className="nav-link custom-link"
                 href="#about"
                 onClick={goTo("#about")}
               >

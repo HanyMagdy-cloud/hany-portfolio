@@ -1,0 +1,134 @@
+/* Container for the floating skill badges */
+.floating-skills-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Let pointer events pass through to underlying links/buttons */
+  z-index: 9999; /* Floats in front of all content cards all over the website */
+  overflow: hidden;
+}
+
+/* Glassmorphic skill badges */
+.floating-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.98);
+  background: rgba(30, 41, 59, 0.55);
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+  border: 1px solid var(--border-color);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.3), 
+    inset 0 1px 1px rgba(255, 255, 255, 0.2),
+    0 0 20px var(--glow-color);
+  transform-origin: center;
+  will-change: transform;
+  transition: 
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  pointer-events: auto; /* Enable hover/clicks on badges themselves */
+  cursor: grab;
+  user-select: none;
+}
+
+.floating-badge:active {
+  cursor: grabbing;
+}
+
+/* Hover interactions */
+.floating-badge:hover {
+  background: rgba(45, 58, 86, 0.75);
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.45), 
+    inset 0 1px 1px rgba(255, 255, 255, 0.3),
+    0 0 30px var(--glow-color);
+  z-index: 100 !important; /* Bring to front on hover */
+}
+
+/* Badge Icon styles */
+.floating-badge svg {
+  font-size: 1.25rem;
+  color: var(--icon-color);
+  filter: drop-shadow(0 0 4px var(--icon-color));
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.floating-badge:hover svg {
+  transform: scale(1.2) rotate(12deg);
+}
+
+/* Dynamic glow styling based on tech brand colors */
+.floating-badge-csharp {
+  --glow-color: rgba(161, 121, 242, 0.4);
+  --icon-color: #a179f2;
+  --border-color: rgba(161, 121, 242, 0.25);
+}
+
+.floating-badge-azure {
+  --glow-color: rgba(59, 130, 246, 0.45);
+  --icon-color: #60a5fa;
+  --border-color: rgba(59, 130, 246, 0.25);
+}
+
+.floating-badge-dotnet {
+  --glow-color: rgba(139, 92, 246, 0.45);
+  --icon-color: #a78bfa;
+  --border-color: rgba(139, 92, 246, 0.25);
+}
+
+.floating-badge-docker {
+  --glow-color: rgba(14, 165, 233, 0.45);
+  --icon-color: #38bdf8;
+  --border-color: rgba(14, 165, 233, 0.25);
+}
+
+.floating-badge-sql {
+  --glow-color: rgba(239, 68, 68, 0.35);
+  --icon-color: #f87171;
+  --border-color: rgba(239, 68, 68, 0.25);
+}
+
+.floating-badge-react {
+  --glow-color: rgba(6, 182, 212, 0.45);
+  --icon-color: #22d3ee;
+  --border-color: rgba(6, 182, 212, 0.25);
+}
+
+.floating-badge-github {
+  --glow-color: rgba(243, 244, 246, 0.25);
+  --icon-color: #f3f4f6;
+  --border-color: rgba(243, 244, 246, 0.15);
+}
+
+/* Keyframe animations for backup/idle pulse */
+@keyframes float-pulse {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Mobile responsive scaling */
+@media (max-width: 768px) {
+  .floating-badge {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+    gap: 8px;
+  }
+  .floating-badge svg {
+    font-size: 1.1rem;
+  }
+}
