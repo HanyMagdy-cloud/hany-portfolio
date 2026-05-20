@@ -5,12 +5,12 @@ import Footer from "./components/footer/Footer";
 import Projects from "./components/projects/Projects";
 import Skills from "./components/skills/Skills";
 import Documents from "./components/documents/Documents";
-import FloatingSkillsBackground from "./components/home/FloatingSkillsBackground";
+import BackgroundSkills from "./components/background/BackgroundSkills";
 
 function App() {
   return (
     <>
-      {/* <FloatingSkillsBackground /> */}
+      <BackgroundSkills />
       <Nav />
       <Home />
 
