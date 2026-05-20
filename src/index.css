@@ -17,6 +17,10 @@
   --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 /* Global body look */
 body {
   font-family: "Poppins", sans-serif;

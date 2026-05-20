@@ -14,7 +14,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
 
-  width: min(1600px, 94%);
+  width: min(1800px, 96%);
   padding: 16px 24px;
   border-radius: 20px;
 
@@ -28,6 +28,12 @@ body {
   transition: all 0.3s ease;
 }
 
+.navbar.custom-nav .container-fluid {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
 /* =======================
    BRAND SECTION
 ======================= */
@@ -38,6 +44,7 @@ body {
   gap: 14px;
   white-space: nowrap;
   flex-shrink: 0;
+  min-width: 0;
 }
 
 .brand-wrap {
@@ -46,6 +53,7 @@ body {
   gap: 12px;
   white-space: nowrap;
   flex-shrink: 0;
+  min-width: 0;
 }
 
 .brand-badge {
@@ -133,7 +141,7 @@ body {
   box-shadow: none !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 
-  display: flex !important;
+  display: none !important;
   flex-direction: column !important;
   justify-content: space-between !important;
   width: 42px !important;
@@ -173,6 +181,26 @@ body {
    MOBILE STYLING
 ======================= */
 
+@media (min-width: 992px) and (max-width: 1320px) {
+  .navbar.custom-nav {
+    padding: 14px 18px;
+  }
+
+  .brand-text {
+    font-size: 1.55rem;
+  }
+
+  .brand-badge {
+    padding: 6px 12px;
+    font-size: 0.82rem;
+  }
+
+  .custom-link {
+    padding: 10px 14px !important;
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 991px) {
 
   body {
@@ -181,7 +209,17 @@ body {
 
   .navbar.custom-nav {
     padding: 10px 16px;
-    width: 94%;
+    width: min(720px, calc(100% - 24px));
+  }
+
+  .custom-toggler {
+    display: flex !important;
+  }
+
+  .navbar.custom-nav .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    gap: 12px;
   }
 
   /* Premium floating absolute glassmorphism panel for links */
@@ -204,19 +242,27 @@ body {
 
     /* Sleek high-end fade-slide transition */
     display: block !important;
+    max-height: 0 !important;
     opacity: 0 !important;
     visibility: hidden !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
     transform: translateY(-12px) scale(0.96) !important;
     transform-origin: top center !important;
     transition: 
       opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
       transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
       visibility 0.3s !important;
   }
 
   .navbar.custom-nav .navbar-collapse.show {
+    display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
+    max-height: 440px !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
     transform: translateY(0) scale(1) !important;
   }
 
@@ -262,7 +308,8 @@ body {
 
 @media (max-width: 576px) {
   .navbar.custom-nav {
-    padding: 8px 12px;
+    padding: 8px 10px;
+    width: calc(100% - 16px);
   }
   
   .navbar-brand {
@@ -270,7 +317,7 @@ body {
   }
 
   .brand-wrap {
-    gap: 8px !important;
+    gap: 7px !important;
   }
 
   .rounded-circle.shadow-sm {
@@ -285,5 +332,23 @@ body {
 
   .brand-text {
     font-size: 1.1rem !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-badge {
+    display: none;
+  }
+
+  .brand-text {
+    font-size: 1rem !important;
+  }
+
+  .custom-toggler {
+    width: 38px !important;
+    height: 34px !important;
+    padding: 7px 9px !important;
   }
 }

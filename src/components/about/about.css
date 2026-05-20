@@ -10,12 +10,12 @@
 .about {
   background: #0f172a;
   border-radius: 24px;
-  padding: 100px 80px;
+  padding: 100px 72px;
   border: 1px solid #1e293b;
   margin: 60px auto;
   display: flex;
   gap: 80px;
-  width: min(1600px, 94%);
+  width: min(1800px, 96%);
   box-shadow: 0 20px 60px rgba(0,0,0,0.35);
 }
 
