@@ -1,5 +1,5 @@
 /* anchor offset for fixed navbar */
-#home { scroll-margin-top: 130px; }
+#home { scroll-margin-top: 150px; }
 
 /* optional wrapper */
 .home-dark{
@@ -12,16 +12,16 @@
 .hero {
   display: flex;
   align-items: center;
-  gap: 80px;
-  padding: 100px 80px;
+  gap: 100px;
+  padding: 120px 100px;
   background: rgba(15, 23, 42, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 20px;
-  margin: 40px auto;
+  border-radius: 24px;
+  margin: 60px auto;
   min-height: calc(100vh - 80px);
-  width: min(1200px, 94%);
+  width: min(1600px, 94%);
   box-shadow: 
     0 25px 60px rgba(0, 0, 0, 0.45),
     inset 0 1px 1px rgba(255, 255, 255, 0.05);
@@ -31,8 +31,8 @@
 
 /* Profile Image */
 .profile-image {
-  width: 300px;
-  height: 300px;
+  width: 360px;
+  height: 360px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #667eea;
@@ -48,42 +48,42 @@
 /* Content Area */
 .content {
   flex: 1;
-  max-width: 700px;
+  max-width: 850px;
 }
 
 .content h1 {
-  font-size: 3.5rem;
+  font-size: 4.25rem;
   color: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   line-height: 1.2;
   font-weight: 700;
 }
 
 .subtitle {
-  font-size: 1.6rem;
+  font-size: 1.95rem;
   color: #667eea;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   font-weight: 600;
 }
 
 .description {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: #cbd5e0;
-  line-height: 1.8;
-  margin-bottom: 35px;
+  line-height: 1.85;
+  margin-bottom: 45px;
 }
 
 /* Buttons */
 .buttons {
   display: flex;
-  gap: 20px;
+  gap: 24px;
 }
 
 .btn {
-  padding: 15px 35px;
-  border-radius: 10px;
+  padding: 16px 40px;
+  border-radius: 12px;
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   text-decoration: none;
   transition: all 0.3s ease;
   border: none;

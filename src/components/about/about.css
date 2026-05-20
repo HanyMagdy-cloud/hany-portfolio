@@ -1,5 +1,5 @@
 /* anchor offset for fixed navbar */
-#about { scroll-margin-top: 130px; }
+#about { scroll-margin-top: 150px; }
 
 /* wrapper spacing */
 .about-wrap {
@@ -9,26 +9,26 @@
 /* About Section - Timeline Style */
 .about {
   background: #0f172a;
-  border-radius: 20px;
-  padding: 80px 60px;
+  border-radius: 24px;
+  padding: 100px 80px;
   border: 1px solid #1e293b;
-  margin: 40px auto;
+  margin: 60px auto;
   display: flex;
-  gap: 60px;
-  width: min(1200px, 94%);
+  gap: 80px;
+  width: min(1600px, 94%);
   box-shadow: 0 20px 60px rgba(0,0,0,0.35);
 }
 
 /* Sidebar Section */
 .sidebar {
-  width: 300px;
+  width: 360px;
   flex-shrink: 0;
 }
 
 .profile-image {
-  width: 250px;
-  height: 250px;
-  border-radius: 20px;
+  width: 280px;
+  height: 280px;
+  border-radius: 24px;
   object-fit: cover;
   border: 4px solid #667eea;
   box-shadow: 0 0 40px rgba(102, 126, 234, 0.4);
@@ -44,24 +44,24 @@
 .sidebar h3 {
   color: #667eea;
   margin-bottom: 20px;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
 }
 
 .sidebar-links {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .sidebar-link {
   background: #1e293b;
-  padding: 12px 18px;
-  border-radius: 8px;
+  padding: 14px 20px;
+  border-radius: 10px;
   color: #cbd5e0;
   text-decoration: none;
   transition: all 0.3s ease;
   border: 1px solid #334155;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   display: block;
 }
 
@@ -78,44 +78,44 @@
 }
 
 .main-content h2 {
-  font-size: 3rem;
+  font-size: 3.65rem;
   color: white;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   line-height: 1.2;
   font-weight: 700;
 }
 
 .subtitle {
-  font-size: 1.6rem;
+  font-size: 1.95rem;
   color: #667eea;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   font-weight: 600;
 }
 
 .description {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: #cbd5e0;
-  line-height: 1.8;
-  margin-bottom: 40px;
+  line-height: 1.85;
+  margin-bottom: 45px;
 }
 
 /* Skills Section */
 .skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 40px;
+  gap: 14px;
+  margin-bottom: 45px;
 }
 
 .skill-tag {
   background: #1e293b;
   color: #667eea;
-  padding: 10px 20px;
-  border-radius: 25px;
+  padding: 12px 24px;
+  border-radius: 28px;
   font-weight: 500;
   border: 1px solid #334155;
   transition: all 0.3s ease;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
 }
 
 .skill-tag:hover {
@@ -129,15 +129,15 @@
 .sections {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  margin-bottom: 40px;
+  gap: 30px;
+  margin-bottom: 45px;
 }
 
 .section-box {
   background: #1e293b;
-  padding: 30px;
-  border-radius: 15px;
-  border-left: 4px solid #667eea;
+  padding: 35px;
+  border-radius: 18px;
+  border-left: 5px solid #667eea;
   transition: all 0.3s ease;
 }
 
@@ -149,8 +149,8 @@
 
 .section-box h3 {
   color: white;
-  font-size: 1.3rem;
-  margin-bottom: 15px;
+  font-size: 1.5rem;
+  margin-bottom: 18px;
 }
 
 .section-box ul {
@@ -161,8 +161,8 @@
 }
 
 .section-box li {
-  padding: 8px 0;
-  padding-left: 20px;
+  padding: 10px 0;
+  padding-left: 24px;
   position: relative;
   line-height: 1.6;
 }
@@ -172,20 +172,20 @@
   position: absolute;
   left: 0;
   color: #667eea;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
 }
 
 /* Buttons */
 .buttons {
   display: flex;
-  gap: 20px;
+  gap: 24px;
 }
 
 .btn {
-  padding: 14px 32px;
-  border-radius: 10px;
+  padding: 16px 36px;
+  border-radius: 12px;
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   text-decoration: none;
   transition: all 0.3s ease;
   display: inline-block;

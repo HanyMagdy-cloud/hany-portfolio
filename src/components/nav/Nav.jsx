@@ -60,13 +60,15 @@ export default function Nav() {
 
         {/* Hamburger */}
         <button
-          className="navbar-toggler custom-toggler"
+          className={`navbar-toggler custom-toggler ${open ? "menu-open" : ""}`}
           type="button"
           aria-label="Toggle navigation"
           aria-expanded={open ? "true" : "false"}
           onClick={() => setOpen((v) => !v)}
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="toggler-icon-bar top-bar"></span>
+          <span className="toggler-icon-bar middle-bar"></span>
+          <span className="toggler-icon-bar bottom-bar"></span>
         </button>
 
         {/* Links (we control show/hide) */}

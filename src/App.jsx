@@ -10,7 +10,7 @@ import FloatingSkillsBackground from "./components/home/FloatingSkillsBackground
 function App() {
   return (
     <>
-      <FloatingSkillsBackground />
+      {/* <FloatingSkillsBackground /> */}
       <Nav />
       <Home />
 
