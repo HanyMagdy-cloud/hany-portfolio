@@ -158,9 +158,9 @@
   }
 
   .background-skill {
-    gap: 8px;
-    padding: 8px 13px;
-    font-size: 0.82rem;
+    gap: 7px;
+    padding: 7px 12px;
+    font-size: 0.76rem;
     box-shadow:
       0 8px 20px rgba(2, 6, 23, 0.18),
       0 0 16px var(--skill-glow),

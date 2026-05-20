@@ -29,8 +29,8 @@ function createParticle(index, width, height, isMobile) {
   const depth = randomBetween(0.45, 1);
   const speed = randomBetween(isMobile ? 0.1 : 0.14, isMobile ? 0.22 : 0.34) * depth;
   const angle = randomBetween(0, Math.PI * 2);
-  const tagWidth = isMobile ? 124 : 172;
-  const tagHeight = isMobile ? 40 : 50;
+  const tagWidth = isMobile ? 110 : 172;
+  const tagHeight = isMobile ? 36 : 50;
 
   return {
     x: randomBetween(24, Math.max(48, width - tagWidth - 24)),
@@ -196,8 +196,11 @@ export default function BackgroundSkills({
           }
         }
 
+        const isMobileViewport = bounds.isMobile;
         const scale = 0.78 + particle.depth * 0.28;
-        element.style.opacity = `${0.52 + particle.depth * 0.36}`;
+        element.style.opacity = isMobileViewport
+          ? `${0.28 + particle.depth * 0.34}`
+          : `${0.52 + particle.depth * 0.36}`;
         element.style.transform = `translate3d(${particle.x}px, ${particle.y}px, 0) rotate(${particle.rotation}deg) scale(${scale})`;
       });
 
