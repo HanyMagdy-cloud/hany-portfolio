@@ -1,12 +1,9 @@
 import { useEffect, useMemo, useRef } from "react";
-import { FaDocker, FaGithub, FaGitAlt, FaLinux, FaReact } from "react-icons/fa";
+import { FaDocker, FaGithub, FaGitAlt, FaReact } from "react-icons/fa";
 import { DiMsqlServer } from "react-icons/di";
 import {
   SiDotnet,
   SiJavascript,
-  SiKubernetes,
-  SiTerraform,
-  SiTypescript,
 } from "react-icons/si";
 import { TbApi, TbBrandAzure, TbBrandCSharp, TbCloudComputing } from "react-icons/tb";
 import "./backgroundSkills.css";
@@ -18,16 +15,12 @@ const DEFAULT_SKILLS = [
   { label: "Azure", icon: TbBrandAzure, tone: "azure" },
   { label: "SQL Server", icon: DiMsqlServer, tone: "rose" },
   { label: "Docker", icon: FaDocker, tone: "sky" },
-  { label: "Kubernetes", icon: SiKubernetes, tone: "blue" },
   { label: "React", icon: FaReact, tone: "cyan" },
   { label: "JavaScript", icon: SiJavascript, tone: "amber" },
-  { label: "TypeScript", icon: SiTypescript, tone: "blue" },
   { label: "Git", icon: FaGitAlt, tone: "orange" },
   { label: "GitHub", icon: FaGithub, tone: "neutral" },
   { label: "REST API", icon: TbApi, tone: "cyan" },
   { label: "Microservices", icon: TbCloudComputing, tone: "teal" },
-  { label: "Terraform", icon: SiTerraform, tone: "purple" },
-  { label: "Linux", icon: FaLinux, tone: "lime" },
 ];
 
 const randomBetween = (min, max) => min + Math.random() * (max - min);
