@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaFilePdf, FaDownload } from "react-icons/fa";
 import CV from "../../assets/Hany_Magdy_CV.pdf";
+import CoverLetter from "../../assets/Hany_Magdy_Cover_Letter.pdf";
 import "./documents.css";
 
 export default function Documents() {
@@ -101,7 +102,7 @@ export default function Documents() {
                 building robust digital solutions, and alignment with target cloud developer positions.
               </p>
               <a 
-                href={CV} 
+                href={CoverLetter} 
                 download="Hany_Magdy_Cover_Letter.pdf"
                 className="doc-btn"
                 title="Download Cover Letter"

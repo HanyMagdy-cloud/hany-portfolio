@@ -67,7 +67,7 @@ export default function FloatingSkillsBackground() {
     window.addEventListener("mouseleave", handleMouseLeave);
 
     // Initialize particles immediately with safe defaults
-    particles.current = BADGES_DATA.map((badge, idx) => {
+    particles.current = BADGES_DATA.map(() => {
       const width = 140;
       const height = 45;
       // Place randomly with breathing room

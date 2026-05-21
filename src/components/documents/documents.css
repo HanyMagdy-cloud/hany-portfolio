@@ -7,10 +7,12 @@
 
 /* big dark panel */
 .documents-shell {
-  width: min(1800px, 96%);
+  width: var(--site-width);
   margin: 60px auto;
-  background: #0f172a;
-  border: 1px solid #1e293b;
+  background: rgba(15, 23, 42, 0.62);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 28px;
   padding: 100px 72px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
@@ -18,7 +20,7 @@
 
 @media (min-width: 1200px) {
   .documents-shell {
-    width: min(2000px, calc(100% - 32px));
+    width: var(--site-width);
     padding: 100px 64px;
   }
 }

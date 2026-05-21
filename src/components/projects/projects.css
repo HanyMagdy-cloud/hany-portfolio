@@ -9,31 +9,31 @@
 /* Background gradient backdrop */
 .projects-dark {
   padding: 80px 0;
-  background: radial-gradient(circle at 50% 30%, #0a1128 0%, #020617 100%);
+  background: transparent;
   position: relative;
   overflow: hidden;
 }
 
 /* Core Container Panel */
 .projects-shell {
-  width: min(1800px, 96%);
+  width: var(--site-width);
   margin: 0 auto;
-  background: rgba(15, 23, 42, 0.45);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(15, 23, 42, 0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 32px;
   padding: 100px 72px;
   box-shadow: 
-    0 30px 70px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    0 16px 40px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
   position: relative;
   z-index: 2;
 }
 
 @media (min-width: 1200px) {
   .projects-shell {
-    width: min(2000px, calc(100% - 32px));
+    width: var(--site-width);
     padding: 100px 64px;
   }
 }
@@ -113,7 +113,7 @@
 
 /* --- Glassmorphic Card Container --- */
 .project-item {
-  background: rgba(30, 41, 59, 0.45);
+  background: rgba(30, 41, 59, 0.36);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -183,7 +183,7 @@
   position: relative;
   height: 200px;
   width: 100%;
-  background: rgba(10, 15, 30, 0.6);
+  background: rgba(10, 15, 30, 0.45);
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   display: grid;
   place-items: center;
@@ -953,7 +953,7 @@
   justify-content: space-between;
   gap: 16px;
   min-height: 140px;
-  background: rgba(10, 15, 30, 0.35);
+  background: rgba(10, 15, 30, 0.28);
   flex: 1;
 }
 

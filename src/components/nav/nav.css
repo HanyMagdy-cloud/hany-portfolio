@@ -14,7 +14,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
 
-  width: min(1800px, 96%);
+  width: var(--site-width);
   padding: 16px 24px;
   border-radius: 20px;
 
@@ -204,7 +204,7 @@ body {
 
 @media (min-width: 1200px) {
   .navbar.custom-nav {
-    width: min(2000px, calc(100% - 32px));
+    width: var(--site-width);
   }
 
   .custom-link {
@@ -224,6 +224,22 @@ body {
 
   .custom-link.active {
     background: rgba(18, 183, 234, 0.16);
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1320px) {
+  .brand-text {
+    font-size: 1.42rem;
+  }
+
+  .brand-badge {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+  }
+
+  .custom-link {
+    padding: 8px 10px !important;
+    font-size: 0.84rem !important;
   }
 }
 
