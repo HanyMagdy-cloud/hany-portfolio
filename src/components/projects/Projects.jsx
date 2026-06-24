@@ -367,10 +367,7 @@ const PROJECTS = [
       </div>
     )
   },
-  {
-    name: "HR Matching Application",
-    repo: "https://github.com/HanyMagdy-cloud/HR-matching-application/blob/master/README.md",
-  },
+  
 ];
 
 export default function Projects() {
