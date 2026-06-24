@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { motion } from "framer-motion";
 import "./footer.css";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
@@ -59,53 +60,97 @@ export default function Footer() {
       );
   };
 
+  const shellVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.75,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        staggerChildren: 0.12,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 25 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
   return (
     <section id="contact" className="footer-dark">
-      <div className="footer-shell">
-        <header className="footer-head">
+      <motion.div 
+        className="footer-shell"
+        variants={shellVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <motion.header className="footer-head" variants={itemVariants}>
           <h2>Contact Me</h2>
           <p className="footer-subtitle">
             Let’s build something great together
           </p>
-        </header>
+        </motion.header>
+
         {/* Social icons */}
-        <nav className="footer-socials" aria-label="Social links">
-          <a
+        <motion.nav className="footer-socials" aria-label="Social links" variants={itemVariants}>
+          <motion.a
             className="social-btn"
             href="https://www.facebook.com/"
             target="_blank"
             rel="noreferrer"
             aria-label="Facebook"
             title="Facebook"
+            whileHover={{ scale: 1.22, y: -6, rotate: 6 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 15 }}
           >
             <FaFacebook />
-          </a>
+          </motion.a>
 
-          <a
+          <motion.a
             className="social-btn"
             href="https://github.com/HanyMagdy-cloud"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
             title="GitHub"
+            whileHover={{ scale: 1.22, y: -6, rotate: -6 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 15 }}
           >
             <FaGithub />
-          </a>
+          </motion.a>
 
-          <a
+          <motion.a
             className="social-btn"
             href="https://www.linkedin.com/in/hany-magdy-40ba97271/"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
             title="LinkedIn"
+            whileHover={{ scale: 1.22, y: -6, rotate: 6 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 15 }}
           >
             <FaLinkedin />
-          </a>
-        </nav>
+          </motion.a>
+        </motion.nav>
 
         {/* Contact form */}
-        <form className="footer-form" onSubmit={handleSubmit} ref={form}>
+        <motion.form 
+          className="footer-form" 
+          onSubmit={handleSubmit} 
+          ref={form}
+          variants={itemVariants}
+        >
           <label className="field">
             <span>Your Name</span>
             <input
@@ -142,10 +187,17 @@ export default function Footer() {
             />
           </label>
 
-          <button className="send-btn" type="submit" disabled={isSending}>
+          <motion.button 
+            className="send-btn" 
+            type="submit" 
+            disabled={isSending}
+            whileHover={{ scale: 1.025, translateY: -2 }}
+            whileTap={{ scale: 0.985 }}
+            transition={{ type: "spring", stiffness: 500, damping: 15 }}
+          >
             {isSending ? "Sending..." : "Send Message"}
-          </button>
-        </form>
+          </motion.button>
+        </motion.form>
 
         {/* Status Messages */}
         <div className="footer-status-container">
@@ -170,7 +222,7 @@ export default function Footer() {
         </div>
 
         {/* Contact info */}
-        <div className="footer-meta">
+        <motion.div className="footer-meta" variants={itemVariants}>
           <p>
             Email:{" "}
             <a href="mailto:honamagdy2@yahoo.com">honamagdy2@yahoo.com</a>
@@ -178,8 +230,8 @@ export default function Footer() {
           <p>
             Phone: <a href="tel:+46790148754">+46 0790148754</a>
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

@@ -1,13 +1,40 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "./about.css";
 import Me from "../../assets/me.png";
 
 export default function About() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 25, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }
+    }
+  };
+
   return (
     <section id="about" className="about-wrap">
       <div className="about">
-        {/* Sidebar */}
-        <aside className="sidebar">
+        {/* Sidebar - Slides in smoothly from the right */}
+        <motion.aside 
+          className="sidebar"
+          initial={{ x: 50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.75, ease: "easeOut" }}
+        >
           <img className="profile-image" src={Me} alt="Hany Magdy" />
 
           <h3>Contact</h3>
@@ -34,22 +61,30 @@ export default function About() {
               honamagdy2@yahoo.com
             </a>
           </div>
-        </aside>
+        </motion.aside>
 
-        {/* Main Content */}
-        <div className="main-content">
-          <h2>About Me</h2>
-          <p className="subtitle">Cloud Developer · .NET · Azure</p>
+        {/* Main Content - Slides in smoothly from the left with staggered text reveals */}
+        <motion.div 
+          className="main-content"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+        >
+          <motion.h2 variants={itemVariants}>About Me</motion.h2>
+          <motion.p className="subtitle" variants={itemVariants}>
+            Cloud Developer · .NET · Azure
+          </motion.p>
 
-          <p className="description">
+          <motion.p className="description" variants={itemVariants}>
             I&apos;m Hany Magdy, a Cloud / .NET Developer focused on building scalable
             APIs and cloud-ready applications. I enjoy clean architecture, writing
             maintainable code, and delivering practical solutions using C#, ASP.NET Core,
             SQL Server, and Azure.
-          </p>
+          </motion.p>
 
           {/* Skill Tags */}
-          <div className="skills">
+          <motion.div className="skills" variants={itemVariants}>
             <span className="skill-tag">C# / .NET</span>
             <span className="skill-tag">ASP.NET Core / Web API</span>
             <span className="skill-tag">SQL Server</span>
@@ -58,10 +93,10 @@ export default function About() {
             <span className="skill-tag">CI/CD</span>
             <span className="skill-tag">Docker</span>
             <span className="skill-tag">React</span>
-          </div>
+          </motion.div>
 
           {/* Structured Boxes */}
-          <div className="sections">
+          <motion.div className="sections" variants={itemVariants}>
             <div className="section-box">
               <h3>What I do</h3>
               <ul>
@@ -80,18 +115,18 @@ export default function About() {
                 <li>API design and scalable application patterns</li>
               </ul>
             </div>
-          </div>
+          </motion.div>
 
           {/* Buttons */}
-          <div className="buttons">
+          <motion.div className="buttons" variants={itemVariants}>
             <a className="btn btn-primary" href="#projects">
               View Projects
             </a>
             <a className="btn btn-secondary" href="#contact">
               Contact Me
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,0 +1,180 @@
+.background-skills {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+  contain: strict;
+}
+
+.background-skills__mist {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(80px);
+  opacity: 0.2;
+  transform: translateZ(0);
+}
+
+.background-skills__mist--blue {
+  width: min(48vw, 620px);
+  height: min(48vw, 620px);
+  left: 4vw;
+  top: 14vh;
+  background: radial-gradient(circle, rgba(18, 183, 234, 0.55), transparent 68%);
+}
+
+.background-skills__mist--purple {
+  width: min(52vw, 680px);
+  height: min(52vw, 680px);
+  right: -10vw;
+  bottom: 4vh;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.48), transparent 70%);
+}
+
+.background-skill {
+  --skill-glow: rgba(96, 165, 250, 0.48);
+  --skill-icon: #93c5fd;
+  --skill-border: rgba(147, 197, 253, 0.36);
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  min-width: max-content;
+  padding: 12px 20px;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.98);
+  background:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.72), rgba(30, 41, 59, 0.46)),
+    rgba(15, 23, 42, 0.55);
+  border: 1px solid var(--skill-border);
+  box-shadow:
+    0 14px 34px rgba(2, 6, 23, 0.3),
+    0 0 30px var(--skill-glow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px) saturate(145%);
+  -webkit-backdrop-filter: blur(14px) saturate(145%);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.04rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.18);
+  user-select: none;
+  will-change: transform, opacity;
+}
+
+.background-skill::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 56%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.background-skill svg {
+  position: relative;
+  z-index: 1;
+  width: 1.18em;
+  height: 1.18em;
+  color: var(--skill-icon);
+  filter: drop-shadow(0 0 8px var(--skill-icon));
+  flex: 0 0 auto;
+}
+
+.background-skill span {
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.background-skill--azure,
+.background-skill--blue {
+  --skill-glow: rgba(59, 130, 246, 0.58);
+  --skill-icon: #60a5fa;
+  --skill-border: rgba(96, 165, 250, 0.3);
+}
+
+.background-skill--cyan {
+  --skill-glow: rgba(34, 211, 238, 0.58);
+  --skill-icon: #22d3ee;
+  --skill-border: rgba(34, 211, 238, 0.3);
+}
+
+.background-skill--teal {
+  --skill-glow: rgba(45, 212, 191, 0.52);
+  --skill-icon: #2dd4bf;
+  --skill-border: rgba(45, 212, 191, 0.28);
+}
+
+.background-skill--purple,
+.background-skill--violet,
+.background-skill--indigo {
+  --skill-glow: rgba(139, 92, 246, 0.6);
+  --skill-icon: #a78bfa;
+  --skill-border: rgba(167, 139, 250, 0.3);
+}
+
+.background-skill--rose {
+  --skill-glow: rgba(244, 114, 182, 0.44);
+  --skill-icon: #fb7185;
+  --skill-border: rgba(251, 113, 133, 0.24);
+}
+
+.background-skill--sky {
+  --skill-glow: rgba(14, 165, 233, 0.6);
+  --skill-icon: #38bdf8;
+  --skill-border: rgba(56, 189, 248, 0.3);
+}
+
+.background-skill--amber,
+.background-skill--orange {
+  --skill-glow: rgba(251, 191, 36, 0.38);
+  --skill-icon: #fbbf24;
+  --skill-border: rgba(251, 191, 36, 0.22);
+}
+
+.background-skill--lime {
+  --skill-glow: rgba(132, 204, 22, 0.26);
+  --skill-icon: #bef264;
+  --skill-border: rgba(190, 242, 100, 0.22);
+}
+
+.background-skill--neutral {
+  --skill-glow: rgba(226, 232, 240, 0.34);
+  --skill-icon: #e2e8f0;
+  --skill-border: rgba(226, 232, 240, 0.18);
+}
+
+@media (max-width: 768px) {
+  .background-skills {
+    height: 100svh;
+  }
+
+  .background-skill {
+    gap: 7px;
+    padding: 7px 12px;
+    font-size: 0.76rem;
+    box-shadow:
+      0 8px 20px rgba(2, 6, 23, 0.18),
+      0 0 16px var(--skill-glow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .background-skills__mist {
+    filter: blur(58px);
+    opacity: 0.16;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .background-skill {
+    transition: opacity 0.3s ease;
+  }
+}
