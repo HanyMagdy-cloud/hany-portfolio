@@ -421,7 +421,7 @@ const PROJECTS = [
       </div>
     ),
   },
-];
+  ];
 
 export default function Projects() {
   const headerVariants = {
