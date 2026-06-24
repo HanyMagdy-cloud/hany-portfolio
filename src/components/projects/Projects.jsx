@@ -129,6 +129,36 @@ const PROJECTS = [
     ),
   },
   {
+    name: "Hotel tracking blacklisted guests",
+    repo: "https://github.com/HanyMagdy-cloud/StockholmInnBlacklist.git",
+    desc: "Hotel guest tracking system for managing blacklisted guests and secure records.",
+    glowClass: "hr-glow",
+    illustration: () => (
+      <div className="project-artwork hr-art">
+        <div className="art-grid" />
+        <div className="art-glow indigo-radial" />
+        <div className="hr-match-mock">
+          <div className="hr-header-box">
+            <FaUserCheck />
+            <span>GUEST SCREENING</span>
+          </div>
+          <div className="matcher-results">
+            <div className="result-row">
+              <span>ID VERIFIED</span> <span className="match-ok">CLEAR</span>
+            </div>
+            <div className="result-row">
+              <span>BLACKLIST</span> <span className="match-ok">MONITORED</span>
+            </div>
+            <div className="match-bar-container">
+              <div className="match-fill" />
+            </div>
+          </div>
+        </div>
+        <div className="floating-badge indigo-badge">Hotel / Security</div>
+      </div>
+    ),
+  },
+  {
     name: "Restaurant International Desktop App",
     repo: "https://github.com/HanyMagdy-cloud/Restaurant01",
     desc: "Desktop application for restaurant management and operations.",

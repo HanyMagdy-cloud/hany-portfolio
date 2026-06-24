@@ -104,10 +104,10 @@
   line-height: 1.6;
 }
 
-/* --- Spacious Desktop 3x or 4x Grid --- */
+/* --- Desktop 3-column Grid --- */
 .projects-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 36px;
 }
 
@@ -1040,7 +1040,7 @@
 /* ==========================================================
    Responsive Adaptive Queries
    ========================================================== */
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .projects-shell {
     padding: 80px 40px;
   }
