@@ -1,22 +1,22 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  FaGithub, 
-  FaShieldAlt, 
-  FaCar, 
-  FaUsers, 
-  FaDesktop, 
-  FaGavel, 
-  FaAd, 
-  FaCloudSun, 
-  FaDatabase, 
-  FaListUl, 
-  FaCloudDownloadAlt, 
-  FaKey, 
-  FaAddressCard, 
-  FaUtensils, 
-  FaGlobe, 
-  FaUserCheck 
+import {
+  FaGithub,
+  FaShieldAlt,
+  FaCar,
+  FaUsers,
+  FaDesktop,
+  FaGavel,
+  FaAd,
+  FaCloudSun,
+  FaDatabase,
+  FaListUl,
+  FaCloudDownloadAlt,
+  FaKey,
+  FaAddressCard,
+  FaUtensils,
+  FaGlobe,
+  FaUserCheck,
 } from "react-icons/fa";
 import "./projects.css";
 
@@ -39,13 +39,19 @@ const PROJECTS = [
             </div>
           </div>
           <div className="api-logs">
-            <div className="log-row"><span className="tag-get">GET</span> <span className="path">/api/v1/ledger</span></div>
-            <div className="log-row"><span className="tag-post">POST</span> <span className="path">/api/v1/transfer</span></div>
+            <div className="log-row">
+              <span className="tag-get">GET</span>{" "}
+              <span className="path">/api/v1/ledger</span>
+            </div>
+            <div className="log-row">
+              <span className="tag-post">POST</span>{" "}
+              <span className="path">/api/v1/transfer</span>
+            </div>
           </div>
         </div>
         <div className="floating-badge cyan-badge">REST API / Secure</div>
       </div>
-    )
+    ),
   },
   {
     name: "Car wash booking system",
@@ -70,7 +76,7 @@ const PROJECTS = [
         </div>
         <div className="floating-badge purple-badge">MVC / Booking</div>
       </div>
-    )
+    ),
   },
   {
     name: "Community Web API",
@@ -82,14 +88,37 @@ const PROJECTS = [
         <div className="art-grid" />
         <div className="art-glow emerald-radial" />
         <div className="community-mesh-mock">
-          <div className="node-center"><FaUsers /></div>
+          <div className="node-center">
+            <FaUsers />
+          </div>
           <div className="node-orbital orb-1" />
           <div className="node-orbital orb-2" />
           <div className="node-orbital orb-3" />
           <svg viewBox="0 0 200 120" className="mesh-lines">
-            <line x1="100" y1="60" x2="45" y2="30" stroke="rgba(52, 211, 153, 0.4)" strokeWidth="1.5" />
-            <line x1="100" y1="60" x2="155" y2="30" stroke="rgba(52, 211, 153, 0.4)" strokeWidth="1.5" />
-            <line x1="100" y1="60" x2="100" y2="95" stroke="rgba(52, 211, 153, 0.4)" strokeWidth="1.5" />
+            <line
+              x1="100"
+              y1="60"
+              x2="45"
+              y2="30"
+              stroke="rgba(52, 211, 153, 0.4)"
+              strokeWidth="1.5"
+            />
+            <line
+              x1="100"
+              y1="60"
+              x2="155"
+              y2="30"
+              stroke="rgba(52, 211, 153, 0.4)"
+              strokeWidth="1.5"
+            />
+            <line
+              x1="100"
+              y1="60"
+              x2="100"
+              y2="95"
+              stroke="rgba(52, 211, 153, 0.4)"
+              strokeWidth="1.5"
+            />
             <circle cx="45" cy="30" r="6" fill="#10b981" />
             <circle cx="155" cy="30" r="6" fill="#10b981" />
             <circle cx="100" cy="95" r="6" fill="#10b981" />
@@ -97,7 +126,7 @@ const PROJECTS = [
         </div>
         <div className="floating-badge emerald-badge">Web API / Clean</div>
       </div>
-    )
+    ),
   },
   {
     name: "Restaurant International Desktop App",
@@ -114,14 +143,20 @@ const PROJECTS = [
             <span className="terminal-title">POS DESKTOP</span>
           </div>
           <div className="terminal-body">
-            <div className="order-item"><span>Burger x2</span> <span className="text-pink">$18.00</span></div>
-            <div className="order-item"><span>Pizza x1</span> <span className="text-pink">$14.50</span></div>
-            <div className="order-item total"><span>TOTAL</span> <span className="text-white">$32.50</span></div>
+            <div className="order-item">
+              <span>Burger x2</span> <span className="text-pink">$18.00</span>
+            </div>
+            <div className="order-item">
+              <span>Pizza x1</span> <span className="text-pink">$14.50</span>
+            </div>
+            <div className="order-item total">
+              <span>TOTAL</span> <span className="text-white">$32.50</span>
+            </div>
           </div>
         </div>
         <div className="floating-badge pink-badge">WinForms / OOP</div>
       </div>
-    )
+    ),
   },
   {
     name: "Auction Web API",
@@ -143,7 +178,7 @@ const PROJECTS = [
         </div>
         <div className="floating-badge amber-badge">JWT / Bidding</div>
       </div>
-    )
+    ),
   },
   {
     name: "Web API Advertisement App",
@@ -168,7 +203,7 @@ const PROJECTS = [
         </div>
         <div className="floating-badge rose-badge">Web API / AdTech</div>
       </div>
-    )
+    ),
   },
   {
     name: "Weather App",
@@ -195,7 +230,7 @@ const PROJECTS = [
         </div>
         <div className="floating-badge sky-badge">REST / Weather</div>
       </div>
-    )
+    ),
   },
   {
     name: "Student-Solution-CRUD",
@@ -212,14 +247,21 @@ const PROJECTS = [
             <span>STUDENT_DB</span>
           </div>
           <div className="crud-table-mock">
-            <div className="table-row head"><span>NAME</span> <span>STATUS</span></div>
-            <div className="table-row"><span>Hany M.</span> <span className="status-ok">GRADUATED</span></div>
-            <div className="table-row"><span>Alice S.</span> <span className="status-pending">ACTIVE</span></div>
+            <div className="table-row head">
+              <span>NAME</span> <span>STATUS</span>
+            </div>
+            <div className="table-row">
+              <span>Hany M.</span> <span className="status-ok">GRADUATED</span>
+            </div>
+            <div className="table-row">
+              <span>Alice S.</span>{" "}
+              <span className="status-pending">ACTIVE</span>
+            </div>
           </div>
         </div>
         <div className="floating-badge green-badge">CRUD / Clean Arch</div>
       </div>
-    )
+    ),
   },
   {
     name: "ToDoList – Full Stack MVC + API (.NET 9)",
@@ -238,7 +280,9 @@ const PROJECTS = [
           <div className="todo-list-rows">
             <div className="todo-item-row done">
               <span className="checkbox checked" />
-              <span className="todo-text line-through">Configure .NET 9 API</span>
+              <span className="todo-text line-through">
+                Configure .NET 9 API
+              </span>
             </div>
             <div className="todo-item-row">
               <span className="checkbox" />
@@ -248,7 +292,7 @@ const PROJECTS = [
         </div>
         <div className="floating-badge violet-badge">.NET 9 / MVC</div>
       </div>
-    )
+    ),
   },
   {
     name: "ImageStore Application using cloud storage",
@@ -264,13 +308,17 @@ const PROJECTS = [
             <FaCloudDownloadAlt className="cloud-float-icon" />
           </div>
           <div className="upload-progress-hud">
-            <div className="hud-title-row"><span>AzureUpload.jpg</span> <span>100%</span></div>
-            <div className="progress-bar-container"><div className="progress-fill-glow" /></div>
+            <div className="hud-title-row">
+              <span>AzureUpload.jpg</span> <span>100%</span>
+            </div>
+            <div className="progress-bar-container">
+              <div className="progress-fill-glow" />
+            </div>
           </div>
         </div>
         <div className="floating-badge azure-badge">Azure / Storage</div>
       </div>
-    )
+    ),
   },
   {
     name: "User Identity.EF",
@@ -292,7 +340,7 @@ const PROJECTS = [
         </div>
         <div className="floating-badge red-badge">EF Core / Auth</div>
       </div>
-    )
+    ),
   },
   {
     name: "Address Book windows Application",
@@ -309,7 +357,9 @@ const PROJECTS = [
             <span>CONTACTS DIRECTORY</span>
           </div>
           <div className="gui-body">
-            <div className="gui-search"><span className="search-text">Search...</span></div>
+            <div className="gui-search">
+              <span className="search-text">Search...</span>
+            </div>
             <div className="contact-strip">
               <span className="dot-avatar" />
               <span className="contact-name">Hany Magdy (Dev)</span>
@@ -318,7 +368,7 @@ const PROJECTS = [
         </div>
         <div className="floating-badge teal-badge">Windows / Desktop</div>
       </div>
-    )
+    ),
   },
   {
     name: "Group Project – Recipe Application- windows application",
@@ -343,7 +393,7 @@ const PROJECTS = [
         </div>
         <div className="floating-badge orange-badge">Group / WinForms</div>
       </div>
-    )
+    ),
   },
   {
     name: "Auction Website- fullstack app - JWT ",
@@ -359,25 +409,28 @@ const PROJECTS = [
             <span className="jwt-tag-lbl">JWT SECURED</span>
           </div>
           <div className="jwt-auth-panel">
-            <div className="jwt-token">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...</div>
-            <div className="jwt-shield"><FaKey className="pulse-key-sec" /></div>
+            <div className="jwt-token">
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+            </div>
+            <div className="jwt-shield">
+              <FaKey className="pulse-key-sec" />
+            </div>
           </div>
         </div>
         <div className="floating-badge magenta-badge">JWT / Fullstack</div>
       </div>
-    )
+    ),
   },
-  
 ];
 
 export default function Projects() {
   const headerVariants = {
     hidden: { opacity: 0, y: 25 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.6, ease: "easeOut" } 
-    }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   const listVariants = {
@@ -386,8 +439,8 @@ export default function Projects() {
       opacity: 1,
       transition: {
         staggerChildren: 0.05,
-      }
-    }
+      },
+    },
   };
 
   const itemVariants = {
@@ -396,21 +449,23 @@ export default function Projects() {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }
-    }
+      transition: { duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] },
+    },
   };
 
   return (
     <section id="projects" className="projects-dark">
       <div className="projects-shell">
-        <motion.header 
+        <motion.header
           className="projects-head"
           variants={headerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h2>My <span className="projects-gradient">Projects</span></h2>
+          <h2>
+            My <span className="projects-gradient">Projects</span>
+          </h2>
           <div className="projects-underline" />
           <p className="projects-subtitle">
             Selected work and GitHub repositories
@@ -420,7 +475,7 @@ export default function Projects() {
           </p>
         </motion.header>
 
-        <motion.div 
+        <motion.div
           className="projects-list"
           variants={listVariants}
           initial="hidden"
@@ -428,21 +483,19 @@ export default function Projects() {
           viewport={{ once: true, margin: "-100px" }}
         >
           {PROJECTS.map((p) => (
-            <motion.article 
-              className={`project-item ${p.glowClass}`} 
+            <motion.article
+              className={`project-item ${p.glowClass}`}
               key={p.name}
               variants={itemVariants}
             >
-              <div className="project-top-visual">
-                {p.illustration()}
-              </div>
+              <div className="project-top-visual">{p.illustration()}</div>
 
               <div className="project-bottom-content">
                 <div className="project-text-block">
                   <h3 className="project-title">{p.name}</h3>
                   <p className="project-desc">{p.desc}</p>
                 </div>
-                
+
                 <a
                   className="project-github-btn"
                   href={p.repo}
