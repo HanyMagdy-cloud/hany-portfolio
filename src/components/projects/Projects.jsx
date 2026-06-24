@@ -60,6 +60,12 @@ const PROJECTS = [
     name: "HR Matching Application",
     repo: "https://github.com/HanyMagdy-cloud/HR-matching-application/blob/master/README.md",
   },
+
+  {
+    name: "Hotel blacklisted customers application",
+    repo: "https://github.com/HanyMagdy-cloud/StockholmInnBlacklist.git",
+  }
+
 ];
 
 export default function Projects() {
