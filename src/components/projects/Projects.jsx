@@ -56,7 +56,7 @@ const PROJECTS = [
   {
     name: "Car wash booking system",
     repo: "https://github.com/HanyMagdy-cloud/CarWashStation.git",
-    desc: "Online booking platform for car wash services with payment integration.",
+    desc: "Online booking platform for car wash services with confirmation emails sent to customers.",
     glowClass: "car-glow",
     illustration: () => (
       <div className="project-artwork car-art">
