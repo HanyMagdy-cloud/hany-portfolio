@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { FaFilePdf, FaDownload } from "react-icons/fa";
 import CV from "../../assets/Hany_Magdy_CV.pdf";
 import CoverLetter from "../../assets/Hany_Magdy_Cover_Letter.pdf";
+import GraduationCertificate from "../../assets/Hany_Magdy_Graduation_Certificate.pdf";
 import "./documents.css";
 
 export default function Documents() {
@@ -48,7 +49,7 @@ export default function Documents() {
           <h2>My Documents</h2>
           <p className="documents-subtitle">Downloadable professional credentials</p>
           <p className="documents-note">
-            Access my comprehensive curriculum vitae and cover letter below.
+            Access my curriculum vitae, cover letter, and graduation certificate below.
           </p>
         </motion.header>
 
@@ -71,8 +72,8 @@ export default function Documents() {
               </div>
               <h3>Curriculum Vitae</h3>
               <p className="doc-desc">
-                My complete professional history, including full-stack development expertise, 
-                cloud integrations with Azure, database architectures, and core project achievements.
+                Discover my professional background as a .NET, C#, and Azure developer, including
+                practical experience, education, and key projects delivering reliable, scalable cloud solutions.
               </p>
               <a 
                 href={CV} 
@@ -98,8 +99,8 @@ export default function Documents() {
               </div>
               <h3>Cover Letter</h3>
               <p className="doc-desc">
-                A professional introduction explaining my engineering philosophies, passion for 
-                building robust digital solutions, and alignment with target cloud developer positions.
+                Discover my motivation, professional strengths, and the value I can bring as a .NET,
+                C#, and Azure developer committed to building reliable, scalable cloud solutions.
               </p>
               <a 
                 href={CoverLetter} 
@@ -108,6 +109,33 @@ export default function Documents() {
                 title="Download Cover Letter"
               >
                 <span>Download Letter</span>
+                <FaDownload className="btn-dl-icon" />
+              </a>
+            </div>
+          </motion.article>
+
+          {/* Card 3: Graduation Certificate */}
+          <motion.article
+            className="doc-card"
+            variants={cardVariants}
+          >
+            <div className="doc-backdrop-glow" />
+            <div className="doc-content">
+              <div className="doc-icon-box">
+                <FaFilePdf />
+              </div>
+              <h3>Graduation Certificate</h3>
+              <p className="doc-desc">
+                My graduation certificate from the .NET Developer program at JENSEN yrkeshögskola,
+                focused on software development, Microsoft Azure, APIs, databases, and cloud integration.
+              </p>
+              <a
+                href={GraduationCertificate}
+                download="Hany_Magdy_Graduation_Certificate.pdf"
+                className="doc-btn"
+                title="Download Graduation Certificate"
+              >
+                <span>Download Certificate</span>
                 <FaDownload className="btn-dl-icon" />
               </a>
             </div>
