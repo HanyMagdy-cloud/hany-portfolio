@@ -2,10 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   FaGithub,
-  FaShieldAlt,
-  FaCar,
   FaUsers,
-  FaDesktop,
   FaGavel,
   FaAd,
   FaCloudSun,
@@ -22,41 +19,33 @@ import "./projects.css";
 
 const PROJECTS = [
   {
-    name: "Bank Web API",
-    repo: "https://github.com/HanyMagdy-cloud/Bank",
-    desc: "Secure RESTful API for banking operations with authentication & authorization.",
-    glowClass: "bank-glow",
+    name: "SaaS Applicant Tracking System",
+    repo: "https://github.com/HanyMagdy-cloud/ATS.project.git",
+    desc: "Multi-tenant SaaS architecture built with ASP.NET Core, Entity Framework Core, ASP.NET Identity, role-based access, Azure SQL, Azure App Service, Azure DevOps CI/CD, and a Kanban recruitment workflow.",
+    glowClass: "community-glow",
     illustration: () => (
-      <div className="project-artwork bank-art">
+      <div className="project-artwork community-art">
         <div className="art-grid" />
-        <div className="art-glow cyan-radial" />
-        <div className="bank-dashboard-mock">
-          <div className="mock-hud">
-            <FaShieldAlt className="shield-pulse" />
-            <div className="hud-metric">
-              <span className="metric-lbl">API LEDGER</span>
-              <span className="metric-val text-cyan">$142,850</span>
-            </div>
+        <div className="art-glow emerald-radial" />
+        <div className="community-mesh-mock">
+          <div className="terminal-header">
+            <FaUserCheck />
+            <span className="terminal-title">APPLICANT PIPELINE</span>
           </div>
-          <div className="api-logs">
-            <div className="log-row">
-              <span className="tag-get">GET</span>{" "}
-              <span className="path">/api/v1/ledger</span>
-            </div>
-            <div className="log-row">
-              <span className="tag-post">POST</span>{" "}
-              <span className="path">/api/v1/transfer</span>
-            </div>
+          <div className="booking-grid">
+            <div className="slot">APPLIED</div>
+            <div className="slot active-slot">INTERVIEW</div>
+            <div className="slot">OFFER</div>
+            <div className="slot booked">HIRED</div>
           </div>
         </div>
-        <div className="floating-badge cyan-badge">REST API / Secure</div>
+        <div className="floating-badge cyan-badge">SaaS / Azure / Kanban</div>
       </div>
     ),
   },
   {
-    name: "Car wash booking system",
-    repo: "https://github.com/HanyMagdy-cloud/CarWashStation.git",
-    desc: "Online booking platform for car wash services with confirmation emails sent to customers.",
+    name: "ZoPlanner – Scheduling Platform",
+    desc: "Professional internship project at ZoCom. Contributed to a real scheduling platform during my internship at ZoCom. Developed ASP.NET Core Web API functionality, supported integrations with Java, JavaScript, and SQL, and worked on search and filtering features in an agile Scrum team.",
     glowClass: "car-glow",
     illustration: () => (
       <div className="project-artwork car-art">
@@ -64,24 +53,165 @@ const PROJECTS = [
         <div className="art-glow purple-radial" />
         <div className="car-hud-mock">
           <div className="terminal-header">
-            <FaCar className="car-icon-slide" />
-            <span className="terminal-title">WASH BOOKING</span>
+            <FaUsers />
+            <span className="terminal-title">TEAM SCHEDULE</span>
           </div>
           <div className="booking-grid">
-            <div className="slot booked">09:00</div>
-            <div className="slot active-slot">10:30</div>
-            <div className="slot">12:00</div>
-            <div className="slot booked">13:30</div>
+            <div className="slot booked">MON</div>
+            <div className="slot active-slot">TUE</div>
+            <div className="slot">WED</div>
+            <div className="slot booked">THU</div>
           </div>
         </div>
-        <div className="floating-badge purple-badge">MVC / Booking</div>
+        <div className="floating-badge purple-badge">ZoCom / Scrum / API</div>
       </div>
     ),
   },
   {
-    name: "Community Web API",
-    repo: "https://github.com/HanyMagdy-cloud/community",
-    desc: "Community management API for users, interaction, and member connectivity.",
+    name: "Cloud-Native Student Management Platform",
+    repo: "https://github.com/HanyMagdy-cloud/Student-Solution-CRUD.git",
+    desc: "A containerized student management platform combining an ASP.NET Core Web API with an MVC frontend and SQL Server. Features complete CRUD and search workflows, Docker Compose orchestration, secure Azure Key Vault configuration, and Azure DevOps CI/CD deployment through ACR and Azure Container Instances.",
+    glowClass: "student-glow",
+    illustration: () => (
+      <div className="project-artwork student-art">
+        <div className="art-grid" />
+        <div className="art-glow green-radial" />
+        <div className="crud-dashboard-mock">
+          <div className="db-hud-header">
+            <FaDatabase />
+            <span>STUDENT PLATFORM</span>
+          </div>
+          <div className="crud-table-mock">
+            <div className="table-row head">
+              <span>SERVICE</span> <span>STATUS</span>
+            </div>
+            <div className="table-row">
+              <span>WEB API</span> <span className="status-ok">RUNNING</span>
+            </div>
+            <div className="table-row">
+              <span>MVC + SQL</span> <span className="status-pending">CONTAINERIZED</span>
+            </div>
+          </div>
+        </div>
+        <div className="floating-badge green-badge">Docker / Azure / CI/CD</div>
+      </div>
+    ),
+  },
+  {
+    name: "Cloud-Based HR Management System",
+    repo: "https://github.com/HanyMagdy-cloud/HR-matching-application.git",
+    desc: "Superior Skills internship project: an ASP.NET MVC HR management system featuring role-based authentication and permission management, with Azure DevOps CI/CD deployment to Azure App Service using Azure SQL, Azure Key Vault, and Managed Identity.",
+    glowClass: "bank-glow",
+    illustration: () => (
+      <div className="project-artwork bank-art">
+        <div className="art-grid" />
+        <div className="art-glow cyan-radial" />
+        <div className="bank-dashboard-mock">
+          <div className="terminal-header">
+            <FaKey />
+            <span className="terminal-title">HR ACCESS CONTROL</span>
+          </div>
+          <div className="api-logs">
+            <div className="log-row">
+              <span className="tag-get">ROLE</span>{" "}
+              <span className="path">Permission Management</span>
+            </div>
+            <div className="log-row">
+              <span className="tag-post">AZURE</span>{" "}
+              <span className="path">Managed Identity / Key Vault</span>
+            </div>
+          </div>
+        </div>
+        <div className="floating-badge cyan-badge">MVC / Azure / CI/CD</div>
+      </div>
+    ),
+  },
+  {
+    name: "Full-Stack Auction Platform – React and ASP.NET Core",
+    repo: "https://github.com/HanyMagdy-cloud/JensenAuctionGroupAssignment.git",
+    desc: "Full-stack auction platform built with React, JavaScript, and an ASP.NET Core Web API. Uses Dapper, SQL Server, stored procedures, JWT authentication, Swagger, and unit testing to support secure end-to-end bidding workflows.",
+    glowClass: "jwt-glow",
+    illustration: () => (
+      <div className="project-artwork jwt-art">
+        <div className="art-grid" />
+        <div className="art-glow magenta-radial" />
+        <div className="jwt-exchange-mock">
+          <div className="jwt-header-box">
+            <span className="jwt-tag-lbl">LIVE BIDDING / JWT SECURED</span>
+          </div>
+          <div className="jwt-auth-panel">
+            <div className="jwt-token">React → Web API → Dapper → SQL</div>
+            <div className="jwt-shield">
+              <FaGavel className="pulse-key-sec" />
+            </div>
+          </div>
+        </div>
+        <div className="floating-badge magenta-badge">React / ASP.NET Core</div>
+      </div>
+    ),
+  },
+  {
+    name: "Azure Image Management Application",
+    repo: "https://github.com/HanyMagdy-cloud/ImageStoreApplication",
+    desc: "ASP.NET Core MVC application deployed to Azure App Service, using Azure Blob Storage for file upload and retrieval and Azure SQL for structured metadata. Its architecture keeps binary image files separate from relational data for scalable cloud storage.",
+    glowClass: "imagestore-glow",
+    illustration: () => (
+      <div className="project-artwork imagestore-art">
+        <div className="art-grid" />
+        <div className="art-glow azure-radial" />
+        <div className="cloud-storage-mock">
+          <div className="cloud-icon-box">
+            <FaCloudDownloadAlt className="cloud-float-icon" />
+          </div>
+          <div className="upload-progress-hud">
+            <div className="hud-title-row">
+              <span>Blob: image.jpg</span> <span>100%</span>
+            </div>
+            <div className="progress-bar-container">
+              <div className="progress-fill-glow" />
+            </div>
+          </div>
+        </div>
+        <div className="floating-badge azure-badge">Blob Storage / Azure SQL</div>
+      </div>
+    ),
+  },
+  {
+    name: "Secure Hotel Operations and Search Platform",
+    repo: "https://github.com/HanyMagdy-cloud/StockholmInnBlacklist.git",
+    desc: "A secure cloud-based hotel application with search, pagination, operational dashboards, and passwordless Azure SQL authentication using Managed Identity. Built with ASP.NET Core MVC, C#, Entity Framework Core, Azure SQL, and Azure App Service.",
+    glowClass: "hr-glow",
+    illustration: () => (
+      <div className="project-artwork hr-art">
+        <div className="art-grid" />
+        <div className="art-glow indigo-radial" />
+        <div className="hr-match-mock">
+          <div className="hr-header-box">
+            <FaUserCheck />
+            <span>HOTEL OPERATIONS</span>
+          </div>
+          <div className="matcher-results">
+            <div className="result-row">
+              <span>SEARCH &amp; FILTER</span>
+              <span className="match-ok">READY</span>
+            </div>
+            <div className="result-row">
+              <span>AZURE SQL</span>
+              <span className="match-ok">IDENTITY</span>
+            </div>
+            <div className="match-bar-container">
+              <div className="match-fill" />
+            </div>
+          </div>
+        </div>
+        <div className="floating-badge indigo-badge">MVC / Azure / Managed Identity</div>
+      </div>
+    ),
+  },
+  {
+    name: "Community Content Management API",
+    repo: "https://github.com/HanyMagdy-cloud/Community.git",
+    desc: "A RESTful community platform built with ASP.NET Core, Dapper, and SQL Server for managing users, blog posts, categories, and comments. Implements ownership-based authorization, permission-aware user actions, repository pattern, dependency injection, stored procedures, search, and Swagger documentation.",
     glowClass: "community-glow",
     illustration: () => (
       <div className="project-artwork community-art">
@@ -95,118 +225,42 @@ const PROJECTS = [
           <div className="node-orbital orb-2" />
           <div className="node-orbital orb-3" />
           <svg viewBox="0 0 200 120" className="mesh-lines">
-            <line
-              x1="100"
-              y1="60"
-              x2="45"
-              y2="30"
-              stroke="rgba(52, 211, 153, 0.4)"
-              strokeWidth="1.5"
-            />
-            <line
-              x1="100"
-              y1="60"
-              x2="155"
-              y2="30"
-              stroke="rgba(52, 211, 153, 0.4)"
-              strokeWidth="1.5"
-            />
-            <line
-              x1="100"
-              y1="60"
-              x2="100"
-              y2="95"
-              stroke="rgba(52, 211, 153, 0.4)"
-              strokeWidth="1.5"
-            />
+            <line x1="100" y1="60" x2="45" y2="30" stroke="rgba(52, 211, 153, 0.4)" strokeWidth="1.5" />
+            <line x1="100" y1="60" x2="155" y2="30" stroke="rgba(52, 211, 153, 0.4)" strokeWidth="1.5" />
+            <line x1="100" y1="60" x2="100" y2="95" stroke="rgba(52, 211, 153, 0.4)" strokeWidth="1.5" />
             <circle cx="45" cy="30" r="6" fill="#10b981" />
             <circle cx="155" cy="30" r="6" fill="#10b981" />
             <circle cx="100" cy="95" r="6" fill="#10b981" />
           </svg>
         </div>
-        <div className="floating-badge emerald-badge">Web API / Clean</div>
+        <div className="floating-badge emerald-badge">Dapper / SQL / Swagger</div>
       </div>
     ),
   },
   {
-    name: "Hotel tracking blacklisted guests",
-    repo: "https://github.com/HanyMagdy-cloud/StockholmInnBlacklist.git",
-    desc: "Hotel guest tracking system for managing blacklisted guests and secure records.",
-    glowClass: "hr-glow",
+    name: "Real-Time Weather Forecast Application",
+    repo: "https://github.com/HanyMagdy-cloud/Weather.git",
+    desc: "A responsive React weather application that integrates with the OpenWeatherMap API to provide real-time conditions and five-day forecasts for cities worldwide. Features city search, temperature and weather details, wind speed and direction, and dynamic weather icons.",
+    glowClass: "weather-glow",
     illustration: () => (
-      <div className="project-artwork hr-art">
+      <div className="project-artwork weather-art">
         <div className="art-grid" />
-        <div className="art-glow indigo-radial" />
-        <div className="hr-match-mock">
-          <div className="hr-header-box">
-            <FaUserCheck />
-            <span>GUEST SCREENING</span>
+        <div className="art-glow sky-radial" />
+        <div className="weather-hud-mock">
+          <div className="weather-header">
+            <FaCloudSun className="weather-icon-pulse" />
+            <div className="temp-info">
+              <span className="temp-val">24°C</span>
+              <span className="temp-city">Stockholm</span>
+            </div>
           </div>
-          <div className="matcher-results">
-            <div className="result-row">
-              <span>ID VERIFIED</span> <span className="match-ok">CLEAR</span>
-            </div>
-            <div className="result-row">
-              <span>BLACKLIST</span> <span className="match-ok">MONITORED</span>
-            </div>
-            <div className="match-bar-container">
-              <div className="match-fill" />
-            </div>
+          <div className="forecast-pills">
+            <div className="pill-day">Mon 21°</div>
+            <div className="pill-day">Tue 23°</div>
+            <div className="pill-day active-day">Wed 24°</div>
           </div>
         </div>
-        <div className="floating-badge indigo-badge">Hotel / Security</div>
-      </div>
-    ),
-  },
-  {
-    name: "Restaurant International Desktop App",
-    repo: "https://github.com/HanyMagdy-cloud/Restaurant01",
-    desc: "Desktop application for restaurant management and operations.",
-    glowClass: "restaurant-glow",
-    illustration: () => (
-      <div className="project-artwork restaurant-art">
-        <div className="art-grid" />
-        <div className="art-glow pink-radial" />
-        <div className="pos-terminal-mock">
-          <div className="terminal-bar">
-            <FaDesktop />
-            <span className="terminal-title">POS DESKTOP</span>
-          </div>
-          <div className="terminal-body">
-            <div className="order-item">
-              <span>Burger x2</span> <span className="text-pink">$18.00</span>
-            </div>
-            <div className="order-item">
-              <span>Pizza x1</span> <span className="text-pink">$14.50</span>
-            </div>
-            <div className="order-item total">
-              <span>TOTAL</span> <span className="text-white">$32.50</span>
-            </div>
-          </div>
-        </div>
-        <div className="floating-badge pink-badge">WinForms / OOP</div>
-      </div>
-    ),
-  },
-  {
-    name: "Auction Web API",
-    repo: "https://github.com/HanyMagdy-cloud/auction",
-    desc: "Auction system API for managing bids, users, and real-time updates.",
-    glowClass: "auction-glow",
-    illustration: () => (
-      <div className="project-artwork auction-art">
-        <div className="art-grid" />
-        <div className="art-glow amber-radial" />
-        <div className="bidding-hud-mock">
-          <div className="gavel-box">
-            <FaGavel className="gavel-swing" />
-          </div>
-          <div className="bid-board">
-            <div className="active-bid">CURRENT: $1,450</div>
-            <div className="bid-badge-item">SOLD</div>
-          </div>
-        </div>
-        <div className="floating-badge amber-badge">JWT / Bidding</div>
+        <div className="floating-badge sky-badge">React / OpenWeatherMap</div>
       </div>
     ),
   },
@@ -232,64 +286,6 @@ const PROJECTS = [
           </div>
         </div>
         <div className="floating-badge rose-badge">Web API / AdTech</div>
-      </div>
-    ),
-  },
-  {
-    name: "Weather App",
-    repo: "https://github.com/HanyMagdy-cloud/Weather",
-    desc: "Weather application providing real-time forecasts and location-based data.",
-    glowClass: "weather-glow",
-    illustration: () => (
-      <div className="project-artwork weather-art">
-        <div className="art-grid" />
-        <div className="art-glow sky-radial" />
-        <div className="weather-hud-mock">
-          <div className="weather-header">
-            <FaCloudSun className="weather-icon-pulse" />
-            <div className="temp-info">
-              <span className="temp-val">24°C</span>
-              <span className="temp-city">Stockholm</span>
-            </div>
-          </div>
-          <div className="forecast-pills">
-            <div className="pill-day">Mon 21°</div>
-            <div className="pill-day">Tue 23°</div>
-            <div className="pill-day active-day">Wed 24°</div>
-          </div>
-        </div>
-        <div className="floating-badge sky-badge">REST / Weather</div>
-      </div>
-    ),
-  },
-  {
-    name: "Student-Solution-CRUD",
-    repo: "https://github.com/HanyMagdy-cloud/Student-Solution-CRUD",
-    desc: "CRUD operations for student solutions with clean architecture and best practices.",
-    glowClass: "student-glow",
-    illustration: () => (
-      <div className="project-artwork student-art">
-        <div className="art-grid" />
-        <div className="art-glow green-radial" />
-        <div className="crud-dashboard-mock">
-          <div className="db-hud-header">
-            <FaDatabase />
-            <span>STUDENT_DB</span>
-          </div>
-          <div className="crud-table-mock">
-            <div className="table-row head">
-              <span>NAME</span> <span>STATUS</span>
-            </div>
-            <div className="table-row">
-              <span>Hany M.</span> <span className="status-ok">GRADUATED</span>
-            </div>
-            <div className="table-row">
-              <span>Alice S.</span>{" "}
-              <span className="status-pending">ACTIVE</span>
-            </div>
-          </div>
-        </div>
-        <div className="floating-badge green-badge">CRUD / Clean Arch</div>
       </div>
     ),
   },
@@ -321,32 +317,6 @@ const PROJECTS = [
           </div>
         </div>
         <div className="floating-badge violet-badge">.NET 9 / MVC</div>
-      </div>
-    ),
-  },
-  {
-    name: "ImageStore Application using cloud storage",
-    repo: "https://github.com/HanyMagdy-cloud/ImageStoreApplication",
-    desc: "Image storage application using Azure Cloud Storage with secure access.",
-    glowClass: "imagestore-glow",
-    illustration: () => (
-      <div className="project-artwork imagestore-art">
-        <div className="art-grid" />
-        <div className="art-glow azure-radial" />
-        <div className="cloud-storage-mock">
-          <div className="cloud-icon-box">
-            <FaCloudDownloadAlt className="cloud-float-icon" />
-          </div>
-          <div className="upload-progress-hud">
-            <div className="hud-title-row">
-              <span>AzureUpload.jpg</span> <span>100%</span>
-            </div>
-            <div className="progress-bar-container">
-              <div className="progress-fill-glow" />
-            </div>
-          </div>
-        </div>
-        <div className="floating-badge azure-badge">Azure / Storage</div>
       </div>
     ),
   },
@@ -425,32 +395,6 @@ const PROJECTS = [
       </div>
     ),
   },
-  {
-    name: "Auction Website- fullstack app - JWT ",
-    repo: "https://github.com/HanyMagdy-cloud/JensenAuctionGroupAssignment",
-    desc: "Full stack auction website with JWT authentication and secure APIs.",
-    glowClass: "jwt-glow",
-    illustration: () => (
-      <div className="project-artwork jwt-art">
-        <div className="art-grid" />
-        <div className="art-glow magenta-radial" />
-        <div className="jwt-exchange-mock">
-          <div className="jwt-header-box">
-            <span className="jwt-tag-lbl">JWT SECURED</span>
-          </div>
-          <div className="jwt-auth-panel">
-            <div className="jwt-token">
-              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-            </div>
-            <div className="jwt-shield">
-              <FaKey className="pulse-key-sec" />
-            </div>
-          </div>
-        </div>
-        <div className="floating-badge magenta-badge">JWT / Fullstack</div>
-      </div>
-    ),
-  },
   ];
 
 export default function Projects() {
@@ -526,16 +470,18 @@ export default function Projects() {
                   <p className="project-desc">{p.desc}</p>
                 </div>
 
-                <a
-                  className="project-github-btn"
-                  href={p.repo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Open ${p.name} repository on GitHub`}
-                  title="Open GitHub repo"
-                >
-                  <FaGithub />
-                </a>
+                {p.repo && (
+                  <a
+                    className="project-github-btn"
+                    href={p.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${p.name} repository on GitHub`}
+                    title="Open GitHub repo"
+                  >
+                    <FaGithub />
+                  </a>
+                )}
               </div>
             </motion.article>
           ))}
