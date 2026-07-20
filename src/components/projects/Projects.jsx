@@ -238,6 +238,38 @@ const PROJECTS = [
     ),
   },
   {
+    name: "Secure Banking Management API",
+    repo: "https://github.com/HanyMagdy-cloud/Bank.git",
+    desc: "A secure RESTful banking API built with ASP.NET Core and SQL Server for managing customers, accounts, cards, loans, fund transfers, and transaction histories. Implements JWT authentication and authorization to protect financial operations and account data.",
+    glowClass: "bank-glow",
+    illustration: () => (
+      <div className="project-artwork bank-art">
+        <div className="art-grid" />
+        <div className="art-glow cyan-radial" />
+        <div className="bank-dashboard-mock">
+          <div className="mock-hud">
+            <FaKey className="shield-pulse" />
+            <div className="hud-metric">
+              <span className="metric-lbl">SECURE BANKING API</span>
+              <span className="metric-val text-cyan">JWT AUTHORIZED</span>
+            </div>
+          </div>
+          <div className="api-logs">
+            <div className="log-row">
+              <span className="tag-get">GET</span>{" "}
+              <span className="path">/api/accounts/transactions</span>
+            </div>
+            <div className="log-row">
+              <span className="tag-post">POST</span>{" "}
+              <span className="path">/api/transfers</span>
+            </div>
+          </div>
+        </div>
+        <div className="floating-badge cyan-badge">ASP.NET Core / SQL / JWT</div>
+      </div>
+    ),
+  },
+  {
     name: "Real-Time Weather Forecast Application",
     repo: "https://github.com/HanyMagdy-cloud/Weather.git",
     desc: "A responsive React weather application that integrates with the OpenWeatherMap API to provide real-time conditions and five-day forecasts for cities worldwide. Features city search, temperature and weather details, wind speed and direction, and dynamic weather icons.",
