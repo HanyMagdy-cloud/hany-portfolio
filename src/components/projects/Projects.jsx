@@ -21,6 +21,7 @@ const PROJECTS = [
   {
     name: "SaaS Applicant Tracking System",
     repo: "https://github.com/HanyMagdy-cloud/ATS.project.git",
+    liveUrl: "https://ats-devotion-ventures.azurewebsites.net/",
     desc: "Multi-tenant SaaS architecture built with ASP.NET Core, Entity Framework Core, ASP.NET Identity, role-based access, Azure SQL, Azure App Service, Azure DevOps CI/CD, and a Kanban recruitment workflow.",
     glowClass: "community-glow",
     illustration: () => (
