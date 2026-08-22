@@ -977,8 +977,15 @@
   margin: 0;
 }
 
-/* 3D-effect Glowing Purple GitHub Button */
-.project-github-btn {
+.project-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* 3D-effect glowing project action buttons */
+.project-action-btn {
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -994,14 +1001,24 @@
   flex-shrink: 0;
 }
 
-.project-github-btn:hover {
+.project-action-btn:hover {
   transform: translateY(-4px) scale(1.12) rotate(8deg);
   box-shadow: 0 0 30px rgba(168, 85, 247, 0.7);
   background: linear-gradient(135deg, #b55fe6 0%, #723be8 100%);
 }
 
-.project-github-btn:active {
+.project-action-btn:active {
   transform: translateY(0) scale(1);
+}
+
+.project-live-btn {
+  background: linear-gradient(135deg, #06b6d4 0%, #2563eb 100%);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.42);
+}
+
+.project-live-btn:hover {
+  background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.7);
 }
 
 /* ==========================================================

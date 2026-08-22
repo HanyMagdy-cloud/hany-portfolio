@@ -100,6 +100,7 @@ const PROJECTS = [
   {
     name: "Cloud-Based HR Management System",
     repo: "https://github.com/HanyMagdy-cloud/HR-matching-application.git",
+    liveUrl: "https://hr-lia1.azurewebsites.net/",
     desc: "Superior Skills internship project: an ASP.NET MVC HR management system featuring role-based authentication and permission management, with Azure DevOps CI/CD deployment to Azure App Service using Azure SQL, Azure Key Vault, and Managed Identity.",
     glowClass: "bank-glow",
     illustration: () => (
@@ -477,7 +478,7 @@ export default function Projects() {
             Selected work and GitHub repositories
           </p>
           <p className="projects-note">
-            Click on GitHub icon to open each repository.
+            Click a GitHub icon to open the repository or a globe icon to visit a live project.
           </p>
         </motion.header>
 
@@ -502,17 +503,34 @@ export default function Projects() {
                   <p className="project-desc">{p.desc}</p>
                 </div>
 
-                {p.repo && (
-                  <a
-                    className="project-github-btn"
-                    href={p.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Open ${p.name} repository on GitHub`}
-                    title="Open GitHub repo"
-                  >
-                    <FaGithub />
-                  </a>
+                {(p.repo || p.liveUrl) && (
+                  <div className="project-actions">
+                    {p.liveUrl && (
+                      <a
+                        className="project-action-btn project-live-btn"
+                        href={p.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit the live ${p.name} project`}
+                        title="Visit live project"
+                      >
+                        <FaGlobe />
+                      </a>
+                    )}
+
+                    {p.repo && (
+                      <a
+                        className="project-action-btn project-github-btn"
+                        href={p.repo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${p.name} repository on GitHub`}
+                        title="Open GitHub repo"
+                      >
+                        <FaGithub />
+                      </a>
+                    )}
+                  </div>
                 )}
               </div>
             </motion.article>
