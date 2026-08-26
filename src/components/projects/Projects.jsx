@@ -12,7 +12,6 @@ import {
   FaKey,
   FaAddressCard,
   FaUtensils,
-  FaGlobe,
   FaUserCheck,
 } from "react-icons/fa";
 import "./projects.css";
@@ -21,7 +20,7 @@ const PROJECTS = [
   {
     name: "SaaS Applicant Tracking System",
     repo: "https://github.com/HanyMagdy-cloud/ATS.project.git",
-    liveUrl: "https://ats-devotion-ventures.azurewebsites.net/",
+    liveUrl: "https://ats-project-gmcraqa6htcgf9e0.swedencentral-01.azurewebsites.net",
     desc: "Multi-tenant SaaS architecture built with ASP.NET Core, Entity Framework Core, ASP.NET Identity, role-based access, Azure SQL, Azure App Service, Azure DevOps CI/CD, and a Kanban recruitment workflow.",
     glowClass: "community-glow",
     illustration: () => (
@@ -479,7 +478,7 @@ export default function Projects() {
             Selected work and GitHub repositories
           </p>
           <p className="projects-note">
-            Click a GitHub icon to open the repository or a globe icon to visit a live project.
+            Click a GitHub icon to open the repository or Live Demo to visit a live project.
           </p>
         </motion.header>
 
@@ -515,7 +514,7 @@ export default function Projects() {
                         aria-label={`Visit the live ${p.name} project`}
                         title="Visit live project"
                       >
-                        <FaGlobe />
+                        Live Demo
                       </a>
                     )}
 
